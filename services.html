@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Services — Wayfinder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&display=swap" rel="stylesheet"/>
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border-radius:0!important;}
+:root{
+  --black:#0A0A0A;--z6:#52525B;--z5:#71717A;--z4:#A1A1AA;
+  --z2:#E4E4E7;--z1:#F4F4F5;--z0:#FAFAFA;--white:#fff;
+  --ohs:#C44A0A;--env:#047857;--haz:#92400E;--brand:#1D4ED8;
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Inter',-apple-system,sans-serif;background:#fff;color:var(--black);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+.wrap{max-width:1320px;margin:0 auto;padding:0 48px;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--z2);}
+.nav-inner{height:60px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--black);}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-link{font-size:13px;font-weight:500;color:var(--z5);transition:color .15s;}
+.nav-link:hover,.nav-link.active{color:var(--black);}
+.nav-cta{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--black);border:1.5px solid var(--black);padding:9px 20px;transition:background .15s,color .15s;}
+.nav-cta:hover{background:var(--black);color:#fff;}
+
+/* PAGE HERO (inner pages) */
+.page-hero{background:var(--black);padding:72px 0 60px;position:relative;overflow:hidden;}
+.page-hero-grid{position:absolute;inset:0;opacity:.04;pointer-events:none;}
+.page-hero-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px;}
+.page-hero-h{font-size:clamp(36px,5vw,72px);font-weight:800;letter-spacing:-.04em;line-height:1.05;color:#fff;}
+.page-hero-sub{font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;max-width:520px;margin-top:16px;}
+
+/* SECTION LABELS */
+.sec-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--z4);}
+.sec-h{font-size:clamp(28px,3.5vw,48px);font-weight:800;letter-spacing:-.035em;line-height:1.1;color:var(--black);}
+
+/* BUTTONS */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--black);color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:14px 28px;border:none;cursor:pointer;transition:opacity .15s;}
+.btn-primary:hover{opacity:.85;}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--black);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:13px 27px;border:1.5px solid var(--black);cursor:pointer;transition:background .15s,color .15s;}
+.btn-outline:hover{background:var(--black);color:#fff;}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--black);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:14px 28px;border:none;cursor:pointer;transition:opacity .15s;}
+.btn-white:hover{opacity:.88;}
+
+/* DOMAIN TAGS */
+.tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;}
+.tag-ohs{background:#FFF7ED;color:var(--ohs);}
+.tag-env{background:#ECFDF5;color:var(--env);}
+.tag-haz{background:#FFFBEB;color:var(--haz);}
+
+/* CONTACT STRIP */
+.contact-strip{background:var(--black);padding:88px 0;}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.contact-h{font-size:clamp(28px,3vw,44px);font-weight:800;letter-spacing:-.04em;line-height:1.1;color:#fff;}
+.contact-sub{font-size:15px;color:rgba(255,255,255,.5);line-height:1.75;margin-top:14px;margin-bottom:28px;}
+.contact-details{padding-left:48px;border-left:1px solid rgba(255,255,255,.1);}
+.c-item{margin-bottom:24px;}
+.c-item:last-child{margin-bottom:0;}
+.c-label{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:5px;}
+.c-val{font-size:15px;color:rgba(255,255,255,.7);}
+
+/* FOOTER */
+footer{padding:52px 0;border-top:1px solid var(--z2);}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+.foot-logo{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--black);margin-bottom:10px;}
+.foot-desc{font-size:13px;color:var(--z5);line-height:1.7;max-width:240px;}
+.foot-head{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--z4);margin-bottom:12px;}
+.foot-link{display:block;font-size:13px;color:var(--z5);line-height:2.0;transition:color .15s;}
+.foot-link:hover{color:var(--black);}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid var(--z2);}
+.foot-copy{font-size:12px;color:var(--z4);}
+.foot-nav-mark{display:flex;align-items:center;gap:12px;}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .wrap{padding:0 20px;}
+  .nav-links{display:none;}
+  .contact-inner{grid-template-columns:1fr!important;}
+  .contact-details{padding-left:0!important;border-left:none!important;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);}
+  .foot-grid{grid-template-columns:1fr 1fr!important;gap:28px;}
+  .foot-bottom{flex-direction:column;gap:12px;align-items:flex-start;}
+}
+@media(max-width:520px){
+  .foot-grid{grid-template-columns:1fr!important;}
+}
+
+
+.domain-section{padding:72px 0;border-bottom:1px solid var(--z2);}
+.domain-section:last-of-type{border-bottom:none;}
+.domain-hdr{display:flex;align-items:baseline;gap:20px;margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid var(--z2);}
+.domain-hdr-num{font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--z4);}
+.domain-hdr-name{font-size:26px;font-weight:800;letter-spacing:-.025em;color:var(--black);}
+
+/* Icon tile grid */
+.icon-tiles{display:grid;grid-template-columns:repeat(3,1fr);margin-bottom:64px;}
+.icon-tile{padding:32px 28px;border-right:1px solid var(--z2);border-top:1px solid var(--z2);cursor:pointer;transition:background .15s;text-decoration:none;display:block;color:inherit;}
+.icon-tile:hover{background:var(--z0);}
+.icon-tile:last-child{border-right:none;}
+.icon-tile-icon{width:36px;height:36px;margin-bottom:16px;opacity:.6;}
+.icon-tile-num{font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--z4);margin-bottom:10px;}
+.icon-tile-name{font-size:16px;font-weight:700;letter-spacing:-.015em;color:var(--black);margin-bottom:8px;line-height:1.3;}
+.icon-tile-desc{font-size:12px;color:var(--z6);line-height:1.65;margin-bottom:14px;}
+.icon-tile-link{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--z4);transition:color .15s;}
+.icon-tile:hover .icon-tile-link{color:var(--black);}
+
+/* Service detail */
+.service-detail{margin-bottom:48px;border:1px solid var(--z2);}
+.service-detail-header{padding:24px 32px;border-bottom:1px solid var(--z2);display:flex;align-items:baseline;gap:16px;}
+.service-detail-num{font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--z4);}
+.service-detail-name{font-size:20px;font-weight:700;letter-spacing:-.02em;color:var(--black);}
+.service-detail-body{display:grid;grid-template-columns:repeat(3,1fr);}
+.sd-col{padding:32px;border-right:1px solid var(--z2);}
+.sd-col:last-child{border-right:none;}
+.sd-col-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--z4);margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--z2);}
+.sd-col-body{font-size:13px;color:var(--z6);line-height:1.8;}
+.sd-delivers{padding:24px 32px;border-top:1px solid var(--z2);background:var(--z0);}
+.sd-delivers-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--z4);margin-bottom:10px;}
+.sd-deliver-item{font-size:12px;color:var(--z6);display:flex;align-items:baseline;gap:8px;margin-bottom:5px;line-height:1.5;}
+.sd-deliver-item::before{content:'\2192';color:var(--z4);font-size:11px;flex-shrink:0;}
+.delivers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+
+@media(max-width:960px){
+  .icon-tiles,.service-detail-body,.delivers-grid{grid-template-columns:1fr!important;}
+  .icon-tile{border-right:none!important;}
+  .sd-col{border-right:none!important;border-bottom:1px solid var(--z2);}
+  .sd-col:last-child{border-bottom:none;}
+}
+
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Wayfinder</a>
+      <div class="nav-links">
+        <a href="services.html" class="nav-link  active">Services</a><a href="work.html" class="nav-link">Work</a><a href="about.html" class="nav-link">About</a>
+        <a href="index.html#contact" class="nav-cta">Book a briefing</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="fine-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="white" stroke-width="0.4" opacity="0.4"/>
+    </pattern>
+    <pattern id="coarse-grid" width="240" height="240" patternUnits="userSpaceOnUse">
+      <path d="M 240 0 L 0 0 0 240" fill="none" stroke="white" stroke-width="1" opacity="0.6"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#fine-grid)" opacity="0.5"/>
+  <rect width="100%" height="100%" fill="url(#coarse-grid)" opacity="0.35"/>
+  <circle cx="50%" cy="50%" r="180" fill="none" stroke="white" stroke-width="0.6" opacity="0.15"/>
+  <circle cx="50%" cy="50%" r="90" fill="none" stroke="white" stroke-width="0.5" opacity="0.12"/>
+  <line x1="0" y1="50%" x2="100%" y2="50%" stroke="white" stroke-width="0.5" opacity="0.12"/>
+  <line x1="50%" y1="0" x2="50%" y2="100%" stroke="white" stroke-width="0.5" opacity="0.12"/>
+</svg>
+  <div class="wrap" style="position:relative;z-index:2;">
+    <p class="page-hero-label">Services</p>
+    <h1 class="page-hero-h">Three practices.<br>Nine service areas.</h1>
+    <p class="page-hero-sub">Select any service area to view the full engagement scope, regulatory context, and included deliverables.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- OHS -->
+  <section class="domain-section" id="ohs">
+    <div class="domain-hdr">
+      <span class="domain-hdr-num">Practice 01</span>
+      <span class="domain-hdr-name">Occupational Health &amp; Safety</span>
+      <span class="tag tag-ohs" style="margin-left:auto;">OHS</span>
+    </div>
+    <div class="icon-tiles">
+      <a href="#workplace-safety" class="icon-tile" style="border-top:2px solid #C44A0A;">
+  <svg class="icon-tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+  <div class="icon-tile-num">01.1</div>
+  <div class="icon-tile-name">Workplace Safety Auditing</div>
+  <div class="icon-tile-desc">WorkSafeBC compliance gap analysis. Every finding classified by enforcement priority and corrected before the engagement closes.</div>
+  <span class="icon-tile-link">View details &darr;</span>
+</a>
+      <a href="#audit-readiness" class="icon-tile" style="border-top:2px solid #C44A0A;">
+  <svg class="icon-tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+  <div class="icon-tile-num">01.2</div>
+  <div class="icon-tile-name">Pre-Inspection Simulation</div>
+  <div class="icon-tile-desc">Physical mock inspection using exact WorkSafeBC officer protocols. Every citation-level gap closed on-site before we leave.</div>
+  <span class="icon-tile-link">View details &darr;</span>
+</a>
+      <a href="#field-operations" class="icon-tile" style="border-top:2px solid #C44A0A;">
+  <svg class="icon-tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+  <div class="icon-tile-num">01.3</div>
+  <div class="icon-tile-name">Field Operations Protection</div>
+  <div class="icon-tile-desc">CCOHS and WorkSafeBC-compliant SWP library for every work classification your crews operate under.</div>
+  <span class="icon-tile-link">View details &darr;</span>
+</a>
+    </div>
+    <div class="service-detail" id="workplace-safety">
+  <div class="service-detail-header" style="border-left:3px solid #C44A0A;">
+    <span class="service-detail-num">01.1</span>
+    <span class="service-detail-name">Workplace Safety Auditing</span>
+  </div>
+  <div class="service-detail-body">
+    <div class="sd-col"><div class="sd-col-label">Why it matters</div><p class="sd-col-body">Regulators conduct unannounced inspections and hold officers personally liable for every documented safety gap. A stop-work order costs tens of thousands per day before legal fees are counted. Most organizations that receive citations had documentation on paper but lacked verified implementation at the moment of inspection.</p></div>
+    <div class="sd-col"><div class="sd-col-label">What we do</div><p class="sd-col-body">We audit your complete safety program against the exact criteria a WorkSafeBC officer applies — physically on-site, not a desk review. Every element tested against the OHS Regulation and applicable safe work procedure requirements. Every gap classified by enforcement priority and expressed as a quantified financial exposure.</p></div>
+    <div class="sd-col"><div class="sd-col-label">How we execute</div><p class="sd-col-body">Immediate corrective action on highest-risk items during the engagement. Prioritised corrective action register produced. All required safety documentation updated or created. Gap closure verified before the engagement ends.</p></div>
+  </div>
+  <div class="sd-delivers">
+    <div class="sd-delivers-label">Included in this engagement</div>
+    <div class="delivers-grid"><div class="sd-deliver-item">Compliance gap report with risk-ranked findings</div>
+<div class="sd-deliver-item">Corrective action register with assigned accountability</div>
+<div class="sd-deliver-item">Updated or produced safety documentation</div>
+<div class="sd-deliver-item">Pre-reinspection readiness confirmation</div></div>
+  </div>
+</div>
+    <div class="service-detail" id="audit-readiness">
+  <div class="service-detail-header" style="border-left:3px solid #C44A0A;">
+    <span class="service-detail-num">01.2</span>
+    <span class="service-detail-name">Pre-Inspection Simulation</span>
+  </div>
+  <div class="service-detail-body">
+    <div class="sd-col"><div class="sd-col-label">Why it matters</div><p class="sd-col-body">An unannounced inspection is statistically certain for any active industrial or construction operation. Citation records enter public regulatory databases and affect tender eligibility, insurance renewals, and lender assessments for years. The financial consequences extend far beyond the immediate fine.</p></div>
+    <div class="sd-col"><div class="sd-col-label">What we do</div><p class="sd-col-body">A full mock inspection using the exact officer protocols WorkSafeBC and federal ESDC inspectors apply — conducted physically on-site. We understand precisely what inspectors prioritise, what documentation they request first, and what physical conditions generate citations most frequently.</p></div>
+    <div class="sd-col"><div class="sd-col-label">How we execute</div><p class="sd-col-body">Every finding documented in regulatory format. Every critical gap closed on-site before we leave. Not a report for you to act on later. Organizations that complete this engagement avoid citation in over 94% of subsequent officer visits.</p></div>
+  </div>
+  <div class="sd-delivers">
+    <div class="sd-delivers-label">Included in this engagement</div>
+    <div class="delivers-grid"><div class="sd-deliver-item">Simulation report in officer documentation format</div>
+<div class="sd-deliver-item">On-site gap closure during the engagement</div>
+<div class="sd-deliver-item">Pre-reinspection readiness declaration</div>
+<div class="sd-deliver-item">Documentation of all cleared citation points</div></div>
+  </div>
+</div>
+    <div class="service-detail" id="field-operations">
+  <div class="service-detail-header" style="border-left:3px solid #C44A0A;">
+    <span class="service-detail-num">01.3</span>
+    <span class="service-detail-name">Field Operations Protection</span>
+  </div>
+  <div class="service-detail-body">
+    <div class="sd-col"><div class="sd-col-label">Why it matters</div><p class="sd-col-body">When an incident occurs without a documented, current safe work procedure for the work being performed, liability attaches immediately. Enforcement inspectors also request procedures during site visits — automatic citation follows if an organization cannot produce one for any active work classification.</p></div>
+    <div class="sd-col"><div class="sd-col-label">What we do</div><p class="sd-col-body">A complete safe work procedure library for every work classification your crews operate under. Begins with a comprehensive task and hazard inventory — cataloguing every distinct work activity, identifying every hazard class, energy source, exposure route, and potential failure mode.</p></div>
+    <div class="sd-col"><div class="sd-col-label">How we execute</div><p class="sd-col-body">Full task and hazard inventory completed. Every procedure written to exact WorkSafeBC regulatory standard with hazard identification, risk assessment, controls, PPE specifications, and emergency steps. Competency verification framework implemented. Formal review cycle established.</p></div>
+  </div>
+  <div class="sd-delivers">
+    <div class="sd-delivers-label">Included in this engagement</div>
+    <div class="delivers-grid"><div class="sd-deliver-item">Complete SWP library per role and hazard class</div>
+<div class="sd-deliver-item">Job hazard analysis for all high-risk tasks</div>
+<div class="sd-deliver-item">Competency verification and sign-off framework</div>
+<div class="sd-deliver-item">Annual review calendar and update protocol</div></div>
+  </div>
+</div>
+  </section>
+
+  <!-- ENV -->
+  <section class="domain-section" id="env">
+    <div class="domain-hdr">
+      <span class="domain-hdr-num">Practice 02</span>
+      <span class="domain-hdr-name">Environmental Compliance</span>
+      <span class="tag tag-env" style="margin-left:auto;">Environmental</span>
+    </div>
+    <div class="icon-tiles">
+      <a href="#carbon-intensity" class="icon-tile" style="border-top:2px solid #047857;">
+  <svg class="icon-tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+  <div class="icon-tile-num">02.1</div>
+  <div class="icon-tile-name">Carbon Intensity &amp; GHG Audits</div>
+  <div class="icon-tile-desc">Scope 1 and 2 intensity audit benchmarked against Vancouver's Building Performance Standards. Penalty exposure calculated per asset.</div>
+  <span class="icon-tile-link">View details &darr;</span>
+</a>
+      <a href="#building-emissions" class="icon-tile" style="border-top:2px solid #047857;">
+  <svg class="icon-tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+  <div class="icon-tile-num">02.2</div>
+  <div class="icon-tile-name">Emissions Filings &amp; Submissions</div>
+  <div class="icon-tile-desc">Annual building emissions reporting managed under Vancouver's Building Performance Standards. Every deadline met. Every record archived.</div>
+  <span class="icon-tile-link">View details &darr;</span>
+</a>
+      <a href="#energy-upgrade" class="icon-tile" style="border-top:2px solid #047857;">
+  <svg class="icon-tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+  <div class="icon-tile-num">02.3</div>
+  <div class="icon-tile-name">Energy &amp; Retrofit Optimization</div>
+  <div class="icon-tile-desc">Full retrofit option analysis across mechanical, envelope, lighting, and renewable. Capital sequenced by net present value and penalty avoidance return.</div>
+  <span class="icon-tile-link">View details &darr;</span>
+</a>
+    </div>
+    <div class="service-detail" id="carbon-intensity">
+  <div class="service-detail-header" style="border-left:3px solid #047857;">
+    <span class="service-detail-num">02.1</span>
+    <span class="service-detail-name">Carbon Intensity &amp; GHG Audits</span>
+  </div>
+  <div class="service-detail-body">
+    <div class="sd-col"><div class="sd-col-label">Why it matters</div><p class="sd-col-body">Municipal building performance standards now carry real assessed annual penalties. For a mid-grade commercial property operating above threshold, exposure can exceed six figures before any formal audit request is issued. Unresolved gaps also constrain green-linked refinancing and depress asset valuations at sale.</p></div>
+    <div class="sd-col"><div class="sd-col-label">What we do</div><p class="sd-col-body">Scope 1 and 2 greenhouse gas intensity audit benchmarked against Vancouver's Building Performance Standards and applicable thresholds. Twelve months of utility consumption data collected and verified per property. GHG intensity calculated for every asset. Every gap quantified. Every remediation option modelled and ranked by penalty avoidance per dollar.</p></div>
+    <div class="sd-col"><div class="sd-col-label">How we execute</div><p class="sd-col-body">Remediation roadmap sequenced by ROI. Submission-ready GHG intensity report produced. Authority-format filings prepared and submitted on your behalf. Typical outcome: 2-3x the audit cost recovered in avoided penalties in year one.</p></div>
+  </div>
+  <div class="sd-delivers">
+    <div class="sd-delivers-label">Included in this engagement</div>
+    <div class="delivers-grid"><div class="sd-deliver-item">GHG intensity report per asset against threshold</div>
+<div class="sd-deliver-item">Penalty exposure calculation and risk register</div>
+<div class="sd-deliver-item">ROI-sequenced remediation roadmap</div>
+<div class="sd-deliver-item">Submission-ready authority filings</div></div>
+  </div>
+</div>
+    <div class="service-detail" id="building-emissions">
+  <div class="service-detail-header" style="border-left:3px solid #047857;">
+    <span class="service-detail-num">02.2</span>
+    <span class="service-detail-name">Emissions Filings &amp; Regulatory Submissions</span>
+  </div>
+  <div class="service-detail-body">
+    <div class="sd-col"><div class="sd-col-label">Why it matters</div><p class="sd-col-body">Missing or late annual submissions generate compounding fines and place your portfolio on active enforcement watchlists — affecting permit eligibility and lender covenants for years. A single missed deadline triggers automatic penalty notices and the authority's right to conduct an unannounced physical inspection.</p></div>
+    <div class="sd-col"><div class="sd-col-label">What we do</div><p class="sd-col-body">Complete annual emissions filing management across your entire portfolio. Utility data collected, calculations verified to jurisdiction-specific methodology, and submissions filed on a managed calendar that guarantees no deadline is ever approached without complete, verified data already prepared.</p></div>
+    <div class="sd-col"><div class="sd-col-label">How we execute</div><p class="sd-col-body">Each submission filed in exact regulatory format on your behalf. Confirmation receipts and acknowledgements retained in a structured compliance archive. Rolling 12-month calendar maintained with internal lead times built in.</p></div>
+  </div>
+  <div class="sd-delivers">
+    <div class="sd-delivers-label">Included in this engagement</div>
+    <div class="delivers-grid"><div class="sd-deliver-item">Annual regulatory submission per property</div>
+<div class="sd-deliver-item">Compliance calendar with all filing deadlines</div>
+<div class="sd-deliver-item">Archived submission records and authority receipts</div>
+<div class="sd-deliver-item">Escalation protocol for deadline risk events</div></div>
+  </div>
+</div>
+    <div class="service-detail" id="energy-upgrade">
+  <div class="service-detail-header" style="border-left:3px solid #047857;">
+    <span class="service-detail-num">02.3</span>
+    <span class="service-detail-name">Energy &amp; Retrofit Optimization</span>
+  </div>
+  <div class="service-detail-body">
+    <div class="sd-col"><div class="sd-col-label">Why it matters</div><p class="sd-col-body">Ad hoc capital investment in energy improvements delivers 40-60% less penalty avoidance per dollar than a sequenced model — while leaving the worst-performing assets continuing to generate maximum penalties. The allocation record also becomes indefensible when reviewed by lenders or regulators.</p></div>
+    <div class="sd-col"><div class="sd-col-label">What we do</div><p class="sd-col-body">Energy use intensity baseline and full retrofit option analysis across mechanical, building envelope, lighting controls, and renewable generation. Each measure modelled for its specific performance contribution and costed at current market rates. Capital sequenced strictly by net present value and penalty avoidance return.</p></div>
+    <div class="sd-col"><div class="sd-col-label">How we execute</div><p class="sd-col-body">Net present value, IRR, and penalty avoidance per dollar calculated for every measure. Multi-year capital roadmap produced with annual targets, cost ceilings, and performance milestones. Contractor performance specifications produced for priority measures. Typical outcome: 2.3-3.1x the return of unsequenced investment.</p></div>
+  </div>
+  <div class="sd-delivers">
+    <div class="sd-delivers-label">Included in this engagement</div>
+    <div class="delivers-grid"><div class="sd-deliver-item">Energy use intensity baseline per asset</div>
+<div class="sd-deliver-item">Multi-year capital roadmap ranked by ROI</div>
+<div class="sd-deliver-item">Contractor performance specifications for priority measures</div>
+<div class="sd-deliver-item">Monitoring framework for ongoing performance tracking</div></div>
+  </div>
+</div>
+  </section>
+
+  <!-- HAZ -->
+  <section class="domain-section" id="haz">
+    <div class="domain-hdr">
+      <span class="domain-hdr-num">Practice 03</span>
+      <span class="domain-hdr-name">Hazmat &amp; Building Performance</span>
+      <span class="tag tag-haz" style="margin-left:auto;">Hazmat</span>
+    </div>
+    <div class="icon-tiles">
+      <a href="#asbestos-registry" class="icon-tile" style="border-top:2px solid #92400E;">
+  <svg class="icon-tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  <div class="icon-tile-num">03.1</div>
+  <div class="icon-tile-name">Designated Substance Surveys</div>
+  <div class="icon-tile-desc">WorkSafeBC-compliant pre-demolition and pre-renovation survey per ASTM E2356. Asbestos, lead, PCB, silica, and mercury assessed before any trade mobilization.</div>
+  <span class="icon-tile-link">View details &darr;</span>
+</a>
+      <a href="#contamination-plans" class="icon-tile" style="border-top:2px solid #92400E;">
+  <svg class="icon-tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+  <div class="icon-tile-num">03.2</div>
+  <div class="icon-tile-name">Contamination &amp; Abatement Management</div>
+  <div class="icon-tile-desc">Pre-construction abatement work plan to WorkSafeBC requirements. Every substance covered, every contractor obligation specified.</div>
+  <span class="icon-tile-link">View details &darr;</span>
+</a>
+      <a href="#indoor-air" class="icon-tile" style="border-top:2px solid #92400E;">
+  <svg class="icon-tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+  <div class="icon-tile-num">03.3</div>
+  <div class="icon-tile-name">Indoor Air Quality &amp; Clearance</div>
+  <div class="icon-tile-desc">Post-abatement clearance per NIOSH 7400 or TEM. Independently accredited laboratory analysis. Reoccupancy authorization produced.</div>
+  <span class="icon-tile-link">View details &darr;</span>
+</a>
+    </div>
+    <div class="service-detail" id="asbestos-registry">
+  <div class="service-detail-header" style="border-left:3px solid #92400E;">
+    <span class="service-detail-num">03.1</span>
+    <span class="service-detail-name">Designated Substance Surveys</span>
+  </div>
+  <div class="service-detail-body">
+    <div class="sd-col"><div class="sd-col-label">Why it matters</div><p class="sd-col-body">Any renovation or demolition without a current designated substance survey creates immediate liability for the property owner, contractor, and corporate officers simultaneously. Pre-1990 structures are presumed to contain designated substances. The obligation to survey applies regardless of whether substances are visually evident or the scale of planned work.</p></div>
+    <div class="sd-col"><div class="sd-col-label">What we do</div><p class="sd-col-body">Thorough physical building assessment and material testing per ASTM E2356 prior to any trade deployments. Building history reviewed — construction records, renovation permits, prior surveys — to identify high-probability substance locations before the first sample is collected. Asbestos, lead, PCB, silica, and mercury assessed, sampled, and laboratory-confirmed.</p></div>
+    <div class="sd-col"><div class="sd-col-label">How we execute</div><p class="sd-col-body">Samples submitted to accredited laboratory with full chain-of-custody documentation. Fully documented Designated Substance Survey produced. Abatement specification and contractor notification package prepared satisfying all WorkSafeBC and permit authority requirements.</p></div>
+  </div>
+  <div class="sd-delivers">
+    <div class="sd-delivers-label">Included in this engagement</div>
+    <div class="delivers-grid"><div class="sd-deliver-item">Designated Substance Survey per ASTM E2356</div>
+<div class="sd-deliver-item">Substance registry with precise location mapping</div>
+<div class="sd-deliver-item">Abatement specification per substance type</div>
+<div class="sd-deliver-item">Contractor notification package for permit applications</div></div>
+  </div>
+</div>
+    <div class="service-detail" id="contamination-plans">
+  <div class="service-detail-header" style="border-left:3px solid #92400E;">
+    <span class="service-detail-num">03.2</span>
+    <span class="service-detail-name">Contamination &amp; Abatement Management</span>
+  </div>
+  <div class="service-detail-body">
+    <div class="sd-col"><div class="sd-col-label">Why it matters</div><p class="sd-col-body">Discovering hazardous materials during active construction without a pre-approved removal strategy results in immediate work stoppage. Liability claims from unplanned discoveries routinely exceed 20% of the original project budget. The absence of a pre-approved abatement plan is itself a regulatory offence under the WorkSafeBC OHS Regulation.</p></div>
+    <div class="sd-col"><div class="sd-col-label">What we do</div><p class="sd-col-body">Complete material contamination management plan designed before any ground-breaking. Discovery risk assessment completed first — identifying all high-probability substance locations ranked by consequence severity. Engineering containment strategies designed for every scenario. Contractor qualification requirements established before mobilization.</p></div>
+    <div class="sd-col"><div class="sd-col-label">How we execute</div><p class="sd-col-body">Full abatement work plan produced per substance type. Contractor qualification and oversight requirements specified. Emergency response protocol produced that activates the moment an unplanned substance is encountered — eliminating decision delay and keeping the project moving with a controlled, documented response.</p></div>
+  </div>
+  <div class="sd-delivers">
+    <div class="sd-delivers-label">Included in this engagement</div>
+    <div class="delivers-grid"><div class="sd-deliver-item">Substance-specific abatement work plan</div>
+<div class="sd-deliver-item">Contractor qualification requirements</div>
+<div class="sd-deliver-item">Emergency discovery response protocol</div>
+<div class="sd-deliver-item">QA/QC oversight framework for abatement works</div></div>
+  </div>
+</div>
+    <div class="service-detail" id="indoor-air">
+  <div class="service-detail-header" style="border-left:3px solid #92400E;">
+    <span class="service-detail-num">03.3</span>
+    <span class="service-detail-name">Indoor Air Quality &amp; Clearance Testing</span>
+  </div>
+  <div class="service-detail-body">
+    <div class="sd-col"><div class="sd-col-label">Why it matters</div><p class="sd-col-body">Reoccupancy without a formally verified air clearance certificate simultaneously voids property insurance, creates tenancy breach exposure, and establishes personal liability for every building official who authorized the return. The obligation to verify air quality before any occupant returns rests entirely with the property owner.</p></div>
+    <div class="sd-col"><div class="sd-col-label">What we do</div><p class="sd-col-body">Continuous, method-verified indoor air quality monitoring across remediated spaces. Pre-abatement air quality baseline established. Continuous particulate monitoring deployed throughout the abatement period. Post-abatement clearance sampling using NIOSH 7400 phase contrast microscopy or TEM methodology as required by the applicable standard.</p></div>
+    <div class="sd-col"><div class="sd-col-label">How we execute</div><p class="sd-col-body">Clearance sampling completed with full chain-of-custody. Formally certified air clearance certificate produced with accredited laboratory results. Regulatory reoccupancy authorization documentation prepared. Immediate, legally defensible reoccupancy enabled.</p></div>
+  </div>
+  <div class="sd-delivers">
+    <div class="sd-delivers-label">Included in this engagement</div>
+    <div class="delivers-grid"><div class="sd-deliver-item">Air clearance certificate per NIOSH 7400 or TEM</div>
+<div class="sd-deliver-item">Accredited laboratory results with chain-of-custody</div>
+<div class="sd-deliver-item">Regulatory reoccupancy authorization</div>
+<div class="sd-deliver-item">Monitoring documentation throughout abatement period</div></div>
+  </div>
+</div>
+  </section>
+
+</div>
+
+<section id="contact" class="contact-strip">
+  <div class="wrap">
+    <div class="contact-inner">
+      <div>
+        <h2 class="contact-h">Ready to map your risk terrain?</h2>
+        <p class="contact-sub">A 90-minute structured exposure briefing at no retainer cost. We identify your most material risks and deliver a preliminary capital exposure figure within one business day.</p>
+        <a href="mailto:intake@wayfinder-sme.com" class="btn-white">Book a risk briefing &rarr;</a>
+      </div>
+      <div class="contact-details">
+        <div class="c-item"><div class="c-label">Email</div><div class="c-val">intake@wayfinder-sme.com</div></div>
+        <div class="c-item"><div class="c-label">Response</div><div class="c-val">Within 4 hours</div></div>
+        <div class="c-item"><div class="c-label">Coverage</div><div class="c-val">Canada &middot; USA &middot; International</div></div>
+        <div class="c-item"><div class="c-label">Intake</div><div class="c-val">No retainer required</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Wayfinder</div>
+        <p class="foot-desc">Operational risk and asset performance consultancy. OHS, environmental compliance, and hazmat &amp; building performance. Canada &middot; USA &middot; International.</p>
+      </div>
+      <div>
+        <div class="foot-head">OHS Practice</div>
+        <a href="services.html#workplace-safety" class="foot-link">Workplace Safety Auditing</a>
+        <a href="services.html#audit-readiness" class="foot-link">Pre-Inspection Simulation</a>
+        <a href="services.html#field-operations" class="foot-link">Field Operations Protection</a>
+      </div>
+      <div>
+        <div class="foot-head">Environmental</div>
+        <a href="services.html#carbon-intensity" class="foot-link">Carbon Intensity &amp; GHG</a>
+        <a href="services.html#building-emissions" class="foot-link">Emissions Filings</a>
+        <a href="services.html#energy-upgrade" class="foot-link">Energy &amp; Retrofit</a>
+        <div class="foot-head" style="margin-top:18px;">Hazmat &amp; Building</div>
+        <a href="services.html#asbestos-registry" class="foot-link">Substance Surveys</a>
+        <a href="services.html#contamination-plans" class="foot-link">Contamination &amp; Abatement</a>
+        <a href="services.html#indoor-air" class="foot-link">Indoor Air Quality</a>
+      </div>
+      <div>
+        <div class="foot-head">Contact</div>
+        <p style="font-size:13px;color:var(--z5);line-height:2.0;">intake@wayfinder-sme.com<br>Response &lt; 4 hours<br><br><a href="work.html" class="foot-link">Selected work</a><a href="about.html" class="foot-link">About the firm</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">&copy; 2026 Wayfinder &mdash; Operational Risk &amp; Asset Performance</span>
+      <div class="foot-nav-mark">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.4;">
+  <line x1="11" y1="2" x2="11" y2="8" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="11" y1="14" x2="11" y2="20" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="2" y1="11" x2="8" y2="11" stroke="currentColor" stroke-width="0.8"/>
+  <line x1="14" y1="11" x2="20" y2="11" stroke="currentColor" stroke-width="0.8"/>
+  <circle cx="11" cy="11" r="1.2" fill="currentColor"/>
+  <text x="11" y="6.5" text-anchor="middle" font-size="3.5" fill="currentColor" font-family="Inter,sans-serif" font-weight="600" letter-spacing=".05em">N</text>
+</svg>
+        <span class="foot-copy" style="font-variant-numeric:tabular-nums;">49&deg;17&prime;N &nbsp;123&deg;07&prime;W</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
