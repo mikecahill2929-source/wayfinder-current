@@ -111,7 +111,7 @@ footer{padding:52px 0;border-top:1px solid var(--z2);}
 
 /* Domain overview (homepage) */
 .domains{padding:80px 0;border-bottom:1px solid var(--z2);}
-.domain-cards{display:grid;grid-template-columns:repeat(3,1fr);margin-top:48px;border:1px solid var(--z2);}
+.domain-cards{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border:1px solid var(--z2);}
 .domain-card{padding:40px 36px;border-right:1px solid var(--z2);transition:background .15s;display:block;}
 .domain-card:last-child{border-right:none;}
 .domain-card:hover{background:var(--z0);}
@@ -157,7 +157,7 @@ footer{padding:52px 0;border-top:1px solid var(--z2);}
 .offer-term-v{font-size:13px;font-weight:700;color:var(--black);}
 
 @media(max-width:960px){
-  .intro-grid,.domain-cards,.offer-grid,.work-cards,.contact-inner{grid-template-columns:1fr!important;}
+  .intro-grid,.domain-cards,.offer-grid,.work-cards,.contact-inner{grid-template-columns:1fr!important;} .domain-cards{grid-template-columns:1fr 1fr!important;}
   .domain-card{border-right:none!important;border-bottom:1px solid var(--z2);}
   .domain-card:last-child{border-bottom:none;}
   .work-card{border-right:none!important;border-bottom:1px solid var(--z2);}
@@ -205,7 +205,7 @@ footer{padding:52px 0;border-top:1px solid var(--z2);}
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="wrap">
-      <p class="hero-eyebrow">Operational risk &middot; Environmental compliance &middot; Hazmat &amp; building</p>
+      <p class="hero-eyebrow">OHS consulting &middot; Environmental compliance &middot; ESG &amp; sustainability &middot; Building sciences</p>
       <h1 class="hero-h">We navigate<br>operational risk.</h1>
       <p class="hero-sub">Every safety gap, environmental obligation, and hazardous material exposure on your sites carries a financial cost. We find it, quantify it, and close it.</p>
       <a href="index.html#contact" class="btn-white">Book a risk briefing &rarr;</a>
@@ -221,7 +221,7 @@ footer{padding:52px 0;border-top:1px solid var(--z2);}
         <h2 class="sec-h">Operational risk intelligence for organizations that can&rsquo;t afford to get it wrong.</h2>
       </div>
       <div style="padding-top:6px;">
-        <p style="font-size:16px;color:var(--z6);line-height:1.8;margin-bottom:16px;">Wayfinder is an operational risk and asset performance consultancy. We embed alongside your team, map your complete exposure terrain, and deliver sequenced, costed remediation with independently verifiable outcomes.</p>
+        <p style="font-size:16px;color:var(--z6);line-height:1.8;margin-bottom:16px;">Wayfinder is an occupational health, safety, and environmental consulting firm. We embed alongside your team, map your complete exposure terrain &mdash; safety gaps, environmental obligations, hazardous materials, ESG reporting &mdash; and deliver sequenced, costed outcomes with independently verifiable results.</p>
         <p style="font-size:16px;color:var(--z6);line-height:1.8;margin-bottom:24px;">We work across occupational safety, environmental compliance, and hazmat and building performance &mdash; for operators who want to perform beyond minimum standards and build a defensible record that holds under any scrutiny.</p>
         <a href="about.html" class="btn-outline">About the firm &rarr;</a>
       </div>
@@ -250,15 +250,15 @@ footer{padding:52px 0;border-top:1px solid var(--z2);}
         <svg class="domain-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
         <div class="domain-card-name">Occupational Health &amp; Safety</div>
         <div class="domain-card-desc">Workplace safety programs, pre-inspection readiness, and field operations protection. Closing every gap before any regulator arrives.</div>
-        <div class="domain-card-services">Workplace Safety Auditing &middot; Pre-Inspection Simulation &middot; Field Operations Protection</div>
+        <div class="domain-card-services">Workplace Safety Auditing &middot; Pre-Inspection Simulation &middot; Field Operations Protection &middot; OHS &amp; Environmental Training</div>
         <span class="domain-card-link">Explore practice &rarr;</span>
       </a>
       <a href="services.html#env" class="domain-card accent-top-env">
         <div class="domain-card-num">Practice 02</div>
         <svg class="domain-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-        <div class="domain-card-name">Environmental Compliance</div>
-        <div class="domain-card-desc">Carbon performance auditing, regulatory submissions, and energy upgrade sequencing. Turning environmental obligations into asset optimization.</div>
-        <div class="domain-card-services">Carbon Intensity &amp; GHG Audits &middot; Emissions Filings &middot; Energy &amp; Retrofit Optimization</div>
+        <div class="domain-card-name">Environmental, ESG &amp; Sustainability</div>
+        <div class="domain-card-desc">Carbon performance auditing, regulatory submissions, GRI sustainability reporting, ISO 14001 environmental management systems, and institutional ESG advisory.</div>
+        <div class="domain-card-services">GHG Audits &middot; Emissions Filings &middot; ESG Reporting &middot; ISO 14001</div>
         <span class="domain-card-link">Explore practice &rarr;</span>
       </a>
       <a href="services.html#haz" class="domain-card accent-top-haz">
@@ -267,6 +267,15 @@ footer{padding:52px 0;border-top:1px solid var(--z2);}
         <div class="domain-card-name">Hazmat &amp; Building Performance</div>
         <div class="domain-card-desc">Designated substance surveys, contamination management, and indoor air quality clearance. Protecting construction timelines and building asset value.</div>
         <div class="domain-card-services">Designated Substance Surveys &middot; Contamination &amp; Abatement &middot; Indoor Air Quality</div>
+        <span class="domain-card-link">Explore practice &rarr;</span>
+      </a>
+      <a href="services.html#building-sciences" class="domain-card" style="border-top:2px solid #D97706;">
+        <div class="domain-card-num">Practice 04</div>
+        <svg class="domain-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/><line x1="12" y1="2" x2="12" y2="9"/></svg>
+        <div class="domain-card-name">Building Sciences</div>
+        <div class="domain-card-desc">Field-based environmental and building performance services. Hazardous materials surveys, indoor air quality, building envelope assessment, and site environmental services. Field credentials in progress &mdash; full availability 2027.</div>
+        <div class="domain-card-services">Hazmat Surveys &middot; IAQ &middot; Building Envelope &middot; Site Environmental</div>
+        <p style="font-size:11px;color:#92400E;background:#FFFBEB;padding:6px 10px;margin-bottom:12px;">Credentials in progress &mdash; contact us to discuss your timeline.</p>
         <span class="domain-card-link">Explore practice &rarr;</span>
       </a>
     </div>
@@ -286,6 +295,7 @@ footer{padding:52px 0;border-top:1px solid var(--z2);}
       <div class="ind-cell"><svg class="ind-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><div class="ind-name">Logistics &amp; Warehousing</div><div class="ind-note">Large-scale safety programs, multi-site auditing, inspection readiness</div></div>
       <div class="ind-cell"><svg class="ind-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><div class="ind-name">Government &amp; Public Sector</div><div class="ind-note">Environmental governance, ESG frameworks, regulatory advisory</div></div>
       <div class="ind-cell"><svg class="ind-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><div class="ind-name">Energy &amp; Resources</div><div class="ind-note">Carbon intensity management, emissions compliance, environmental risk</div></div>
+      <div class="ind-cell"><svg class="ind-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><div class="ind-name">Education &amp; Academia</div><div class="ind-note">Campus OHS programs, sustainability reporting (GRI/STARS), IAQ assessments, and building performance services</div></div>
     </div>
   </div>
 </section>
@@ -359,7 +369,7 @@ footer{padding:52px 0;border-top:1px solid var(--z2);}
     <div class="foot-grid">
       <div>
         <div class="foot-logo">Wayfinder</div>
-        <p class="foot-desc">Operational risk and asset performance consultancy. OHS, environmental compliance, and hazmat &amp; building performance. Canada &middot; USA &middot; International.</p>
+        <p class="foot-desc">OHS consulting &middot; Environmental compliance &middot; ESG &amp; sustainability &middot; Building sciences. Canada &middot; USA &middot; International.</p>
       </div>
       <div>
         <div class="foot-head">OHS Practice</div>
