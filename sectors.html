@@ -12,36 +12,49 @@ html{font-size:16px;}
 body{font-family:'Inter',-apple-system,sans-serif;background:#fff;color:#0A0A0A;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
 .wrap{max-width:1400px;margin:0 auto;padding:0 48px;}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff;border-bottom:1px solid #E4E4E7;}
 .nav-bar{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;}
-.nav-logo{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#0A0A0A;}
+.nav-logo{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#0A0A0A;}
+.nav-logo svg{color:#0A0A0A;}
 .hamburger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:4px;color:#0A0A0A;}
 .hamburger span{display:block;width:24px;height:1.5px;background:currentColor;transition:transform .25s,opacity .25s;}
 .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
-.nav-overlay{position:fixed;inset:0;background:#0A0A0A;z-index:190;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;flex-direction:column;justify-content:center;padding:0 80px;}
-.nav-overlay.open{opacity:1;pointer-events:all;}
-.nav-ol-wrap{display:flex;flex-direction:column;gap:2px;}
-.nav-ol{font-size:clamp(32px,5vw,60px);font-weight:800;letter-spacing:-.03em;color:rgba(255,255,255,.18);transition:color .15s;cursor:pointer;display:block;padding:5px 0;line-height:1.1;}
+
+/* ── DRAWER ── */
+.nav-drawer{position:fixed;top:0;right:0;bottom:0;width:380px;background:#0A0A0A;z-index:190;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;justify-content:center;padding:80px 48px 48px;}
+.nav-drawer.open{transform:translateX(0);}
+.drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:185;opacity:0;pointer-events:none;transition:opacity .3s;}
+.drawer-backdrop.open{opacity:1;pointer-events:all;}
+.nav-ol-wrap{display:flex;flex-direction:column;gap:4px;}
+.nav-ol{font-size:22px;font-weight:800;letter-spacing:-.02em;color:rgba(255,255,255,.25);transition:color .15s;cursor:pointer;display:block;padding:6px 0;line-height:1.1;}
 .nav-ol:hover{color:#fff;}
-.nav-ol-sub{display:flex;flex-direction:column;padding-left:28px;overflow:hidden;max-height:0;transition:max-height .2s ease;}
-.nav-ol-sub.open{max-height:160px;}
-.nav-ol-sub a{font-size:clamp(14px,1.8vw,20px);font-weight:500;color:rgba(255,255,255,.4);padding:3px 0;display:block;transition:color .15s;}
+.nav-ol-sub{display:flex;flex-direction:column;padding-left:16px;overflow:hidden;max-height:0;transition:max-height .2s ease;}
+.nav-ol-sub.open{max-height:120px;}
+.nav-ol-sub a{font-size:13px;font-weight:500;color:rgba(255,255,255,.35);padding:3px 0;display:block;transition:color .15s;}
 .nav-ol-sub a:hover{color:#fff;}
-.nav-overlay-bottom{position:absolute;bottom:40px;left:80px;right:80px;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,.08);padding-top:28px;}
-.nav-cta{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.25);padding:12px 24px;}
-.nav-info{font-size:12px;color:rgba(255,255,255,.28);line-height:1.9;text-align:right;}
+.drawer-bottom{margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);}
+.drawer-cta{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.25);padding:12px 20px;display:inline-block;margin-bottom:16px;}
+.drawer-info{font-size:11px;color:rgba(255,255,255,.28);line-height:1.9;}
+
+/* ── PAGE HERO ── */
 .page-hero{background:#0A0A0A;padding:128px 0 72px;}
 .ph-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:18px;}
 .ph-h{font-size:clamp(44px,7vw,96px);font-weight:800;letter-spacing:-.04em;line-height:1.0;color:#fff;}
 .ph-sub{font-size:17px;color:rgba(255,255,255,.45);line-height:1.75;max-width:560px;margin-top:20px;}
+
+/* ── SECTIONS ── */
 .sec-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#A1A1AA;margin-bottom:14px;}
 .sec-h{font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-.035em;color:#0A0A0A;margin-bottom:40px;}
 .section{padding:72px 0;border-bottom:1px solid #E4E4E7;}
+
+/* ── FOOTER ── */
 footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 .foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
-.foot-logo{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#0A0A0A;margin-bottom:12px;}
+.foot-logo{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#0A0A0A;margin-bottom:12px;}
 .foot-desc{font-size:13px;color:#71717A;line-height:1.75;max-width:260px;}
 .foot-social{display:flex;gap:16px;margin-top:20px;flex-wrap:wrap;}
 .foot-social a{font-size:11px;color:#A1A1AA;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:color .15s;}
@@ -52,32 +65,128 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid #E4E4E7;}
 .foot-copy{font-size:12px;color:#A1A1AA;}
 .foot-mark{display:flex;align-items:center;gap:10px;}
-@media(max-width:1024px){.wrap,.nav-bar{padding-left:24px;padding-right:24px;}.foot-top{grid-template-columns:1fr 1fr;}.foot-bottom{flex-direction:column;gap:8px;align-items:flex-start;}.nav-overlay{padding:0 32px;}.nav-overlay-bottom{left:32px;right:32px;}}
-@media(max-width:600px){.foot-top{grid-template-columns:1fr;}.nav-ol{font-size:9vw;}}.sector-grid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid #E4E4E7;border-top:1px solid #E4E4E7;}
-.sector{padding:32px 24px;border-right:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;transition:background .15s;}
+
+@media(max-width:1024px){.wrap,.nav-bar{padding-left:24px;padding-right:24px;}.foot-top{grid-template-columns:1fr 1fr;}.foot-bottom{flex-direction:column;gap:8px;align-items:flex-start;}.nav-drawer{width:100%;}}
+@media(max-width:600px){.foot-top{grid-template-columns:1fr;}}.sector-grid{display:grid;grid-template-columns:repeat(2,1fr);border-left:1px solid #E4E4E7;border-top:1px solid #E4E4E7;}
+.sector{padding:40px 36px;border-right:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;transition:background .15s;}
 .sector:hover{background:#FAFAFA;}
-.sector-name{font-size:16px;font-weight:700;color:#0A0A0A;margin-bottom:8px;}
-.sector-note{font-size:13px;color:#52525B;line-height:1.65;}
-.sector-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:12px;}
-.sector-tag{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border:1px solid #E4E4E7;color:#A1A1AA;}
-@media(max-width:1024px){.sector-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.sector-grid{grid-template-columns:1fr;}}</style>
+.sector-num{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A1A1AA;margin-bottom:10px;}
+.sector-name{font-size:20px;font-weight:800;letter-spacing:-.025em;color:#0A0A0A;margin-bottom:12px;}
+.sector-note{font-size:14px;color:#52525B;line-height:1.75;}
+@media(max-width:768px){.sector-grid{grid-template-columns:1fr;}}</style>
 </head>
-<body>
-<nav id="main-nav"><div class="nav-bar"><a href="index.html" class="nav-logo">Wayfinder</a><button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
-<div class="nav-overlay" id="nav-overlay"><div class="nav-ol-wrap"><a href="about.html" class="nav-ol">About us</a><div><span class="nav-ol" onclick="toggleSub(this)">Services</span><div class="nav-ol-sub"><a href="ohs.html">Occupational health &amp; safety</a><a href="esg.html">Environmental &amp; ESG</a><a href="building.html">Building sciences</a></div></div><a href="sectors.html" class="nav-ol">Sectors</a><a href="people.html" class="nav-ol">People</a><a href="projects.html" class="nav-ol">Projects</a></div><div class="nav-overlay-bottom"><a href="mailto:intake@wayfinder-sme.com" class="nav-cta">Book a risk briefing &rarr;</a><div class="nav-info">intake@wayfinder-sme.com<br>Canada &middot; USA &middot; International</div></div></div>
-<section class="page-hero"><div class="wrap"><p class="ph-label">Sectors</p><h1 class="ph-h">Where we work.</h1><p class="ph-sub">Nine sectors across Canada, the United States, and internationally. Each with distinct regulatory obligations across OHS, environmental, and building sciences.</p></div></section>
-<section class="section"><div class="wrap"><p class="sec-label">Industries</p><h2 class="sec-h">Sectors served.</h2>
-<div class="sector-grid">
-<div class="sector"><div class="sector-name">Construction &amp; development</div><div class="sector-note">Site safety programs, WorkSafeBC compliance, WCB management, designated substance surveys, abatement management, and environmental baseline studies.</div><div class="sector-tags"><span class="sector-tag">OHS</span><span class="sector-tag">Building Sci</span><span class="sector-tag">ENV</span></div></div>
-<div class="sector"><div class="sector-name">Commercial real estate</div><div class="sector-note">GHG audits, BPS filings, energy retrofit sequencing, ESG reporting, OHS programs, and designated substance surveys for existing and acquired assets.</div><div class="sector-tags"><span class="sector-tag">ESG</span><span class="sector-tag">ENV</span><span class="sector-tag">Building Sci</span></div></div>
-<div class="sector"><div class="sector-name">Strata &amp; property management</div><div class="sector-note">WorkSafeBC OHS, WCB management, GHG compliance, building envelope assessment, IAQ, and designated substance surveys for strata corporations and property managers.</div><div class="sector-tags"><span class="sector-tag">OHS</span><span class="sector-tag">ESG</span><span class="sector-tag">Building Sci</span></div></div>
-<div class="sector"><div class="sector-name">Industrial &amp; manufacturing</div><div class="sector-note">Safety auditing, WCB management, ISO 14001 EMS, ESG reporting, field operations protection, and environmental compliance programs for industrial facilities.</div><div class="sector-tags"><span class="sector-tag">OHS</span><span class="sector-tag">ENV</span><span class="sector-tag">ESG</span></div></div>
-<div class="sector"><div class="sector-name">Healthcare &amp; long-term care</div><div class="sector-note">OHS programs, WCB management, WHMIS training, IAQ assessment, GHG reporting, and ESG advisory for healthcare facilities and long-term care operators.</div><div class="sector-tags"><span class="sector-tag">OHS</span><span class="sector-tag">Building Sci</span><span class="sector-tag">ESG</span></div></div>
-<div class="sector"><div class="sector-name">Logistics &amp; warehousing</div><div class="sector-note">Multi-site safety programs, WCB management, inspection readiness, fleet GHG emissions, and ESG reporting for distribution and logistics operations.</div><div class="sector-tags"><span class="sector-tag">OHS</span><span class="sector-tag">ESG</span><span class="sector-tag">ENV</span></div></div>
-<div class="sector"><div class="sector-name">Government &amp; public sector</div><div class="sector-note">OHS program design, environmental governance, GRI reporting, ISO 14001 implementation, and ESG advisory for municipal and provincial government entities.</div><div class="sector-tags"><span class="sector-tag">OHS</span><span class="sector-tag">ESG</span><span class="sector-tag">ENV</span></div></div>
-<div class="sector"><div class="sector-name">Energy &amp; resources</div><div class="sector-note">OHS field operations, environmental compliance, carbon accounting, ISO 14001, net zero strategy, and ESG reporting for energy and resource sector clients.</div><div class="sector-tags"><span class="sector-tag">OHS</span><span class="sector-tag">ENV</span><span class="sector-tag">ESG</span></div></div>
-<div class="sector"><div class="sector-name">Education &amp; academia</div><div class="sector-note">Campus OHS programs, sustainability reporting (GRI/STARS), IAQ assessments, building performance services, and ESG advisory for post-secondary institutions.</div><div class="sector-tags"><span class="sector-tag">OHS</span><span class="sector-tag">ESG</span><span class="sector-tag">Building Sci</span></div></div>
-</div></div></section>
-<footer><div class="wrap"><div class="foot-top"><div><div class="foot-logo">Wayfinder</div><p class="foot-desc">An EHS and ESG consulting firm committed to navigating operational risk.</p><div class="foot-social"><a href="https://www.linkedin.com/in/michaelcahill-csp/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:intake@wayfinder-sme.com">Email</a></div></div><div><div class="foot-col-h">Services</div><a href="ohs.html" class="foot-link">OHS practice</a><a href="esg.html" class="foot-link">Environmental &amp; ESG</a><a href="building.html" class="foot-link">Building sciences</a></div><div><div class="foot-col-h">Company</div><a href="about.html" class="foot-link">About us</a><a href="people.html" class="foot-link">People</a><a href="projects.html" class="foot-link">Projects</a><a href="sectors.html" class="foot-link">Sectors</a></div><div><div class="foot-col-h">Contact</div><span class="foot-link">intake@wayfinder-sme.com</span><span class="foot-link">Response &lt; 4 hours</span></div></div><div class="foot-bottom"><span class="foot-copy">&copy; 2026 Wayfinder EHS Consulting</span><div class="foot-mark"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="opacity:.35;"><line x1="10" y1="2" x2="10" y2="7" stroke="#A1A1AA" stroke-width="1"/><line x1="10" y1="13" x2="10" y2="18" stroke="#A1A1AA" stroke-width="1"/><line x1="2" y1="10" x2="7" y2="10" stroke="#A1A1AA" stroke-width="1"/><line x1="13" y1="10" x2="18" y2="10" stroke="#A1A1AA" stroke-width="1"/><circle cx="10" cy="10" r="1.5" fill="#A1A1AA"/><text x="10" y="5.5" text-anchor="middle" font-size="3" fill="#A1A1AA" font-family="Inter,sans-serif" font-weight="700">N</text></svg><span class="foot-copy">49&deg;17&prime;N &nbsp;123&deg;07&prime;W</span></div></div></div></footer>
-<script>var overlay=document.getElementById('nav-overlay');var hbg=document.getElementById('hamburger');function toggleNav(){var open=overlay.classList.toggle('open');hbg.classList.toggle('open',open);document.body.style.overflow=open?'hidden':'';}function toggleSub(el){el.nextElementSibling.classList.toggle('open');}document.addEventListener('keydown',function(e){if(e.key==='Escape'&&overlay.classList.contains('open'))toggleNav();});</script></body></html>
+<body><nav id="main-nav">
+  <div class="nav-bar">
+    <a href="index.html" class="nav-logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="14" y1="4" x2="14" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="14" y1="18" x2="14" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="4" y1="14" x2="10" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="18" y1="14" x2="24" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="14" cy="14" r="2.5" fill="currentColor"/>
+  <text x="14" y="9" text-anchor="middle" font-size="4" fill="currentColor" font-family="Inter,sans-serif" font-weight="800">N</text>
+</svg> Wayfinder</a>
+    <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer-backdrop" id="drawer-backdrop" onclick="toggleNav()"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <div class="nav-ol-wrap">
+    <a href="about.html" class="nav-ol">About us</a>
+    <div>
+      <span class="nav-ol" onclick="toggleSub(this)">Services</span>
+      <div class="nav-ol-sub">
+        <a href="ohs.html">Occupational health &amp; safety</a>
+        <a href="esg.html">Environmental &amp; ESG</a>
+        <a href="building.html">Building sciences</a>
+      </div>
+    </div>
+    <a href="sectors.html" class="nav-ol">Sectors</a>
+    <a href="projects.html" class="nav-ol">Projects</a>
+  </div>
+  <div class="drawer-bottom">
+    <a href="mailto:intake@wayfinder-sme.com" class="drawer-cta">Book a risk briefing &rarr;</a>
+    <div class="drawer-info">intake@wayfinder-sme.com<br>Canada &middot; USA &middot; International</div>
+  </div>
+</div><section class="page-hero"><div class="wrap">
+  <p class="ph-label">Sectors</p>
+  <h1 class="ph-h">Where we work.</h1>
+  <p class="ph-sub">Eight sectors. Each with distinct OHS obligations, environmental compliance requirements, and ESG reporting pressures — often running simultaneously.</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <p class="sec-label">Industries</p>
+  <h2 class="sec-h">Sectors served.</h2>
+  <div class="sector-grid">
+<div class="sector"><div class="sector-num">01</div><div class="sector-name">Heavy construction</div><div class="sector-note">WorkSafeBC stop work orders, field safety supervision, and WCB cost management are existential risks on active sites. We deliver pre-inspection readiness programs, designated substance surveys before any structural alteration, site OHS leadership, and environmental baseline studies and spill prevention for brownfield and greenfield development.</div></div>
+<div class="sector"><div class="sector-num">02</div><div class="sector-name">Commercial real estate &amp; strata</div><div class="sector-note">Building performance standards, GHG intensity penalties, and ESG disclosure requirements are reshaping asset values and lease negotiations. We manage BPS filings, GHG audits, energy retrofit sequencing, ESG reporting under GRI and GRESB, designated substance surveys for acquired or repositioned assets, and OHS programs for property management and strata corporations.</div></div>
+<div class="sector"><div class="sector-num">03</div><div class="sector-name">Industrial &amp; manufacturing</div><div class="sector-note">Regulatory exposure in industrial environments compounds quickly — a single WorkSafeBC order or ISO 14001 nonconformance can halt production lines and trigger third-party audits. We deploy integrated OHS auditing, environmental compliance programs, ISO 14001 EMS implementation, GHG emissions accounting, and ESG reporting frameworks calibrated to industrial operating conditions.</div></div>
+<div class="sector"><div class="sector-num">04</div><div class="sector-name">Healthcare &amp; long-term care</div><div class="sector-note">Healthcare facilities operate under overlapping OHS obligations — WHMIS, infection control, violence prevention, and workers' compensation management — alongside growing ESG reporting requirements tied to accreditation and public funding. We provide OHS program design, WCB management, IAQ assessment, GHG reporting, and ESG advisory for hospitals, clinics, and long-term care operators.</div></div>
+<div class="sector"><div class="sector-num">05</div><div class="sector-name">Supply chain &amp; logistics</div><div class="sector-note">Multi-site, 24-hour operations create disproportionate WCB claims exposure, fatigue-related incident risk, and Scope 1 fleet emissions liability. We build enterprise-wide OHS systems, manage WCB cost containment, deliver fleet and warehouse safety programs, and produce Scope 1 and 2 GHG emissions inventories and ESG reporting for logistics operators from last-mile to national distribution.</div></div>
+<div class="sector"><div class="sector-num">06</div><div class="sector-name">Energy &amp; resources</div><div class="sector-note">Field operations in energy and resource extraction carry the highest severity-weighted risk profiles in any sector. We provide OHS field leadership, environmental compliance and spill response planning, Scope 1 and 2 GHG accounting, ISO 14001 EMS, net zero transition advisory, and ESG reporting for upstream, midstream, and downstream energy clients.</div></div>
+<div class="sector"><div class="sector-num">07</div><div class="sector-name">Government &amp; public sector</div><div class="sector-note">Public sector organizations face intensifying disclosure obligations under federal and provincial sustainability reporting frameworks alongside internal OHS accountability to workers and unions. We deliver OHS program governance, environmental management systems, GRI-aligned sustainability reporting, and ESG advisory mandates for municipal, provincial, and Crown corporation clients.</div></div>
+<div class="sector"><div class="sector-num">08</div><div class="sector-name">Education</div><div class="sector-note">Post-secondary institutions manage complex multi-building campuses with aging infrastructure, significant designated substance exposure, and growing STARS and sustainability reporting obligations tied to endowment and accreditation. We provide campus OHS programs, IAQ and designated substance assessments for renovation and renewal projects, GHG reporting, and ESG advisory for colleges and universities.</div></div>
+</div></div></section><footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="14" y1="4" x2="14" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="14" y1="18" x2="14" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="4" y1="14" x2="10" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="18" y1="14" x2="24" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="14" cy="14" r="2.5" fill="currentColor"/>
+  <text x="14" y="9" text-anchor="middle" font-size="4" fill="currentColor" font-family="Inter,sans-serif" font-weight="800">N</text>
+</svg> Wayfinder</div>
+        <p class="foot-desc">An EHS and ESG consulting firm committed to navigating operational risk.</p>
+        <div class="foot-social">
+          <a href="https://www.linkedin.com/in/michaelcahill-csp/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:intake@wayfinder-sme.com">Email</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-h">Services</div>
+        <a href="ohs.html" class="foot-link">OHS practice</a>
+        <a href="esg.html" class="foot-link">Environmental &amp; ESG</a>
+        <a href="building.html" class="foot-link">Building sciences</a>
+      </div>
+      <div>
+        <div class="foot-col-h">Company</div>
+        <a href="about.html" class="foot-link">About us</a>
+        <a href="projects.html" class="foot-link">Projects</a>
+        <a href="sectors.html" class="foot-link">Sectors</a>
+      </div>
+      <div>
+        <div class="foot-col-h">Contact</div>
+        <span class="foot-link">intake@wayfinder-sme.com</span>
+        <span class="foot-link">Response &lt; 4 hours</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">&copy; 2026 Wayfinder EHS Consulting</span>
+      <div class="foot-mark">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="opacity:.35;">
+          <line x1="10" y1="2" x2="10" y2="7" stroke="#A1A1AA" stroke-width="1"/>
+          <line x1="10" y1="13" x2="10" y2="18" stroke="#A1A1AA" stroke-width="1"/>
+          <line x1="2" y1="10" x2="7" y2="10" stroke="#A1A1AA" stroke-width="1"/>
+          <line x1="13" y1="10" x2="18" y2="10" stroke="#A1A1AA" stroke-width="1"/>
+          <circle cx="10" cy="10" r="1.5" fill="#A1A1AA"/>
+          <text x="10" y="5.5" text-anchor="middle" font-size="3" fill="#A1A1AA" font-family="Inter,sans-serif" font-weight="700">N</text>
+        </svg>
+        <span class="foot-copy">49&deg;17&prime;N &nbsp;123&deg;07&prime;W</span>
+      </div>
+    </div>
+  </div>
+</footer><script>
+var drawer=document.getElementById('nav-drawer');
+var backdrop=document.getElementById('drawer-backdrop');
+var hbg=document.getElementById('hamburger');
+function toggleNav(){
+  var open=drawer.classList.toggle('open');
+  backdrop.classList.toggle('open',open);
+  hbg.classList.toggle('open',open);
+  document.body.style.overflow=open?'hidden':'';
+}
+function toggleSub(el){el.nextElementSibling.classList.toggle('open');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&drawer.classList.contains('open'))toggleNav();});
+</script></body></html>
