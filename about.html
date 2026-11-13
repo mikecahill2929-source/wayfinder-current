@@ -7,24 +7,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border-radius:0!important;}
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border-radius:0!important;}
 html{font-size:16px;}
 body{font-family:'Inter',-apple-system,sans-serif;background:#fff;color:#0A0A0A;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
 .wrap{max-width:1400px;margin:0 auto;padding:0 48px;}
 
-/* ── NAV ── */
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff;border-bottom:1px solid #E4E4E7;}
 .nav-bar{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;}
 .nav-logo{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#0A0A0A;}
-.nav-logo svg{color:#0A0A0A;}
 .hamburger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:4px;color:#0A0A0A;}
 .hamburger span{display:block;width:24px;height:1.5px;background:currentColor;transition:transform .25s,opacity .25s;}
 .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
 
-/* ── DRAWER ── */
+/* DRAWER */
 .nav-drawer{position:fixed;top:0;right:0;bottom:0;width:380px;background:#0A0A0A;z-index:190;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;justify-content:center;padding:80px 48px 48px;}
 .nav-drawer.open{transform:translateX(0);}
 .drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:185;opacity:0;pointer-events:none;transition:opacity .3s;}
@@ -33,25 +33,71 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff;border-botto
 .nav-ol{font-size:22px;font-weight:800;letter-spacing:-.02em;color:rgba(255,255,255,.25);transition:color .15s;cursor:pointer;display:block;padding:6px 0;line-height:1.1;}
 .nav-ol:hover{color:#fff;}
 .nav-ol-sub{display:flex;flex-direction:column;padding-left:16px;overflow:hidden;max-height:0;transition:max-height .2s ease;}
-.nav-ol-sub.open{max-height:120px;}
-.nav-ol-sub a{font-size:13px;font-weight:500;color:rgba(255,255,255,.35);padding:3px 0;display:block;transition:color .15s;}
+.nav-ol-sub.open{max-height:160px;}
+.nav-ol-sub a{font-size:13px;font-weight:500;color:rgba(255,255,255,.35);padding:4px 0;display:block;transition:color .15s;}
 .nav-ol-sub a:hover{color:#fff;}
 .drawer-bottom{margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);}
 .drawer-cta{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.25);padding:12px 20px;display:inline-block;margin-bottom:16px;}
 .drawer-info{font-size:11px;color:rgba(255,255,255,.28);line-height:1.9;}
 
-/* ── PAGE HERO ── */
-.page-hero{background:#0A0A0A;padding:128px 0 72px;}
+/* DARK HERO */
+.page-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#060C17 0%,#0B1829 55%,#060C17 100%);padding:140px 0 80px;}
+.hero-grid{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.10;mix-blend-mode:luminosity;}
+.ph-inner{position:relative;z-index:2;}
 .ph-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:18px;}
 .ph-h{font-size:clamp(44px,7vw,96px);font-weight:800;letter-spacing:-.04em;line-height:1.0;color:#fff;}
-.ph-sub{font-size:17px;color:rgba(255,255,255,.45);line-height:1.75;max-width:560px;margin-top:20px;}
+.ph-sub{font-size:17px;color:rgba(255,255,255,.45);line-height:1.75;max-width:600px;margin-top:20px;}
 
-/* ── SECTIONS ── */
+/* INTRO SECTION */
+.about-intro{padding:72px 0;border-bottom:1px solid #E4E4E7;}
+.about-pull{font-size:clamp(20px,2.5vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:#0A0A0A;max-width:700px;margin-bottom:32px;}
+.about-body{font-size:15px;color:#52525B;line-height:1.9;max-width:680px;}
+.about-body p+p{margin-top:16px;}
+
+/* PROTOCOL SECTION */
+.protocol-section{padding:72px 0;border-bottom:1px solid #E4E4E7;}
 .sec-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#A1A1AA;margin-bottom:14px;}
-.sec-h{font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-.035em;color:#0A0A0A;margin-bottom:40px;}
-.section{padding:72px 0;border-bottom:1px solid #E4E4E7;}
+.sec-h{font-size:clamp(26px,3vw,42px);font-weight:800;letter-spacing:-.035em;color:#0A0A0A;margin-bottom:48px;line-height:1.1;}
 
-/* ── FOOTER ── */
+/* PROTOCOL TILES — 2×2 grid */
+.proto-grid{display:grid;grid-template-columns:repeat(2,1fr);border-left:1px solid #E4E4E7;border-top:1px solid #E4E4E7;}
+.proto-tile{border-right:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;overflow:hidden;}
+.proto-img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .5s ease;filter:grayscale(15%);}
+.proto-tile:hover .proto-img{transform:scale(1.03);}
+.proto-body{padding:28px 28px 36px;}
+.proto-num{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0A0A0A;margin-bottom:10px;opacity:.35;}
+.proto-title{font-size:20px;font-weight:800;letter-spacing:-.025em;color:#0A0A0A;margin-bottom:10px;}
+.proto-desc{font-size:14px;color:#52525B;line-height:1.75;}
+.proto-tag{display:inline-block;margin-top:14px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#A1A1AA;border-top:1px solid #E4E4E7;padding-top:12px;width:100%;}
+
+/* TEAM SECTION */
+.team-section{padding:72px 0;border-bottom:1px solid #E4E4E7;}
+.person+.person{margin-top:64px;padding-top:64px;border-top:1px solid #E4E4E7;}
+.person-grid{display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:start;}
+.person-photo{background:#F4F4F5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;height:280px;color:#A1A1AA;}
+.photo-label{font-size:11px;font-weight:500;letter-spacing:.05em;color:#A1A1AA;text-align:center;}
+.person-name{font-size:clamp(24px,2.5vw,34px);font-weight:800;letter-spacing:-.035em;margin-bottom:6px;}
+.person-role{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#A1A1AA;margin-bottom:20px;}
+.person-creds{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+.cred{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0A0A0A;background:#F4F4F5;padding:4px 10px;}
+.person-bio{font-size:15px;color:#52525B;line-height:1.9;}
+.person-bio p+p{margin-top:14px;}
+.pstats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:28px;border-top:1px solid #E4E4E7;border-left:1px solid #E4E4E7;}
+.pstat{padding:20px 0;text-align:center;border-right:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;}
+.pstat-n{font-size:22px;font-weight:800;letter-spacing:-.03em;}
+.pstat-l{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#A1A1AA;margin-top:4px;}
+
+/* CTA STRIP */
+.cta-strip{background:linear-gradient(135deg,#060C17 0%,#0B1829 60%,#060C17 100%);padding:72px 0;position:relative;overflow:hidden;}
+.cta-grid-bg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.cta-inner{position:relative;z-index:2;}
+.cta-h{font-size:clamp(28px,4vw,52px);font-weight:800;letter-spacing:-.04em;color:#fff;max-width:700px;line-height:1.1;margin-bottom:28px;}
+.cta-sub{font-size:15px;color:rgba(255,255,255,.45);line-height:1.75;max-width:480px;margin-bottom:36px;}
+.cta-btn{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0A0A0A;background:#fff;padding:14px 28px;}
+.cta-btn:hover{background:#E4E4E7;}
+
+/* FOOTER */
 footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 .foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
 .foot-logo{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#0A0A0A;margin-bottom:12px;}
@@ -66,13 +112,26 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 .foot-copy{font-size:12px;color:#A1A1AA;}
 .foot-mark{display:flex;align-items:center;gap:10px;}
 
-@media(max-width:1024px){.wrap,.nav-bar{padding-left:24px;padding-right:24px;}.foot-top{grid-template-columns:1fr 1fr;}.foot-bottom{flex-direction:column;gap:8px;align-items:flex-start;}.nav-drawer{width:100%;}}
-@media(max-width:600px){.foot-top{grid-template-columns:1fr;}}.nav-ol{font-size:9vw;}
-}</style>
+@media(max-width:1024px){
+  .wrap,.nav-bar{padding-left:24px;padding-right:24px;}
+  .foot-top{grid-template-columns:1fr 1fr;}
+  .foot-bottom{flex-direction:column;gap:8px;align-items:flex-start;}
+  .nav-drawer{width:100%;}
+  .person-grid{grid-template-columns:1fr;gap:28px;}
+  .person-photo{height:200px;}
+  .proto-grid{grid-template-columns:1fr;}
+  .pstats{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:600px){
+  .foot-top{grid-template-columns:1fr;}
+  .pstats{grid-template-columns:1fr;}
+}
+</style>
 </head>
-<body><nav id="main-nav">
+<body>
+<nav id="main-nav">
   <div class="nav-bar">
-    <a href="index.html" class="nav-logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <a href="index.html" class="nav-logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none">
   <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
   <line x1="14" y1="4" x2="14" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
   <line x1="14" y1="18" x2="14" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -87,95 +146,118 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 <div class="drawer-backdrop" id="drawer-backdrop" onclick="toggleNav()"></div>
 <div class="nav-drawer" id="nav-drawer">
   <div class="nav-ol-wrap">
-    <a href="about.html" class="nav-ol">About us</a>
+    <a href="about.html" class="nav-ol">About Us</a>
     <div>
       <span class="nav-ol" onclick="toggleSub(this)">Services</span>
       <div class="nav-ol-sub">
-        <a href="ohs.html">Occupational health &amp; safety</a>
+        <a href="ohs.html">Occupational Health &amp; Safety</a>
         <a href="esg.html">Environmental &amp; ESG</a>
-        <a href="building.html">Building sciences</a>
+        <a href="building.html">Building Sciences</a>
       </div>
     </div>
     <a href="sectors.html" class="nav-ol">Sectors</a>
     <a href="projects.html" class="nav-ol">Projects</a>
   </div>
   <div class="drawer-bottom">
-    <a href="mailto:intake@wayfinder-sme.com" class="drawer-cta">Book a risk briefing &rarr;</a>
+    <a href="mailto:intake@wayfinder-sme.com" class="drawer-cta">Book A Risk Briefing &rarr;</a>
     <div class="drawer-info">intake@wayfinder-sme.com<br>Canada &middot; USA &middot; International</div>
-  </div>
-</div><div class="nav-overlay" id="nav-overlay">
-  <div class="nav-ol-wrap">
-    <a href="about.html" class="nav-ol">About us</a>
-    <div>
-      <span class="nav-ol" onclick="toggleSub(this)">Services</span>
-      <div class="nav-ol-sub">
-        <a href="ohs.html">Occupational health &amp; safety</a>
-        <a href="esg.html">Environmental &amp; ESG</a>
-        <a href="building.html">Building sciences</a>
-      </div>
-    </div>
-    <a href="sectors.html" class="nav-ol">Sectors</a>
-    <a href="people.html" class="nav-ol">People</a>
-    <a href="projects.html" class="nav-ol">Projects</a>
-  </div>
-  <div class="nav-overlay-bottom">
-    <a href="mailto:intake@wayfinder-sme.com" class="nav-cta">Book a risk briefing &rarr;</a>
-    <div class="nav-info">intake@wayfinder-sme.com<br>Canada &middot; USA &middot; International</div>
   </div>
 </div>
 
+<!-- DARK HERO -->
 <section class="page-hero">
-  <div class="wrap">
-    <p class="ph-label">About us</p>
-    <h1 class="ph-h">The firm.</h1>
+  <svg class="hero-grid" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <pattern id="fine" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,.045)" stroke-width=".5"/>
+      </pattern>
+      <pattern id="coarse" width="200" height="200" patternUnits="userSpaceOnUse">
+        <path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(255,255,255,.08)" stroke-width=".8"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#fine)"/>
+    <rect width="100%" height="100%" fill="url(#coarse)"/>
+    <g fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1">
+      <path d="M 48 80 L 48 48 L 80 48"/>
+      <path d="M 48 48 L 36 36"/>
+    </g>
+    <text x="90" y="52" font-size="9" fill="rgba(255,255,255,.18)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="2">49°17'N 123°07'W</text>
+    <line x1="0" y1="40%" x2="100%" y2="40%" stroke="rgba(99,179,237,.06)" stroke-width="1"/>
+  </svg>
+  <img class="hero-bg-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80" alt=""/>
+  <div class="wrap ph-inner">
+    <p class="ph-label">About Wayfinder</p>
+    <h1 class="ph-h">The Firm.</h1>
     <p class="ph-sub">Two principals. 35 years of combined experience. One integrated firm built to navigate operational risk.</p>
   </div>
 </section>
 
-<section class="about-nav">
+<!-- ABOUT INTRO -->
+<section class="about-intro">
   <div class="wrap">
-    <p class="about-nav-pull">The name comes from the navigators who mapped unknown coastlines with incomplete information and high stakes. That is exactly what compliance looks like in a complex regulatory environment.</p>
-    <p class="about-body">Wayfinder EHS Consulting is an occupational health, safety, and environmental consulting firm based in Canada, operating nationally and internationally. We embed alongside client teams, map their complete exposure terrain, and deliver sequenced, costed outcomes with independently verifiable results.</p>
-    <p class="about-body">Our practice spans three domains — OHS, Environmental &amp; ESG, and Building Sciences — delivered under a single engagement model. No handoffs. No gaps between disciplines.</p>
-  </div>
-</section>
-
-<section class="methodology">
-  <div class="wrap">
-    <p class="sec-label">How we work</p>
-    <h2 class="sec-h">The Wayfinder protocol.</h2>
-    <div class="phase-row">
-      <div class="phase">
-        <div class="phase-n">01</div>
-        <div class="phase-t">Map the exposure</div>
-        <div class="phase-b">We map your complete regulatory and physical risk terrain before any remediation begins. No assumptions.</div>
-        <div class="phase-w">Discovery &amp; audit</div>
-      </div>
-      <div class="phase">
-        <div class="phase-n">02</div>
-        <div class="phase-t">Sequence the fix</div>
-        <div class="phase-b">Findings are costed and prioritized by risk magnitude, not alphabetical order. Capital is sequenced accordingly.</div>
-        <div class="phase-w">Risk ranking &amp; costing</div>
-      </div>
-      <div class="phase">
-        <div class="phase-n">03</div>
-        <div class="phase-t">Execute and manage</div>
-        <div class="phase-b">We manage the remediation process — not just the report. We stay on file until closure is confirmed.</div>
-        <div class="phase-w">Implementation</div>
-      </div>
-      <div class="phase">
-        <div class="phase-n">04</div>
-        <div class="phase-t">Confirm safe arrival</div>
-        <div class="phase-b">Independent verification of outcomes. Deliverables you can show a regulator, insurer, or board.</div>
-        <div class="phase-w">Verification &amp; reporting</div>
-      </div>
+    <p class="about-pull">The name comes from the navigators who mapped unknown coastlines with incomplete information and high stakes.</p>
+    <div class="about-body">
+      <p>Wayfinder EHS Consulting is an occupational health, safety, and environmental consulting firm based in Canada, operating nationally and internationally. We embed alongside client teams, map their complete exposure terrain, and deliver sequenced, costed outcomes with independently verifiable results.</p>
+      <p>Our practice spans three domains — OHS, Environmental &amp; ESG, and Building Sciences — delivered under a single engagement model. No handoffs. No gaps between disciplines.</p>
     </div>
   </div>
 </section>
 
-<section class="team">
+<!-- THE WAYFINDER PROTOCOL — 4 tiles -->
+<section class="protocol-section">
   <div class="wrap">
-    <p class="sec-label">Our principals</p>
+    <p class="sec-label">How We Work</p>
+    <h2 class="sec-h">The Wayfinder Protocol.</h2>
+    <div class="proto-grid">
+
+      <div class="proto-tile">
+        <img class="proto-img" src="https://images.unsplash.com/photo-1569144157591-c60f3f82f137?w=900&q=80" alt="Map the Exposure"/>
+        <div class="proto-body">
+          <div class="proto-num">01</div>
+          <div class="proto-title">Map The Exposure</div>
+          <div class="proto-desc">We map your complete regulatory and physical risk terrain before any remediation begins. No assumptions — full-scope discovery covering OHS, environmental, and building science vectors simultaneously.</div>
+          <span class="proto-tag">Discovery &amp; Audit</span>
+        </div>
+      </div>
+
+      <div class="proto-tile">
+        <img class="proto-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80" alt="Sequence the Fix"/>
+        <div class="proto-body">
+          <div class="proto-num">02</div>
+          <div class="proto-title">Sequence The Fix</div>
+          <div class="proto-desc">Findings are costed and prioritized by risk magnitude — not alphabetical order. Capital is sequenced by consequence exposure so your highest-liability items are addressed first.</div>
+          <span class="proto-tag">Risk Ranking &amp; Costing</span>
+        </div>
+      </div>
+
+      <div class="proto-tile">
+        <img class="proto-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" alt="Execute and Manage"/>
+        <div class="proto-body">
+          <div class="proto-num">03</div>
+          <div class="proto-title">Execute And Manage</div>
+          <div class="proto-desc">We manage the remediation process — not just the report. Contractor oversight, regulatory liaison, and field presence continue until closure is confirmed and documented.</div>
+          <span class="proto-tag">Implementation</span>
+        </div>
+      </div>
+
+      <div class="proto-tile">
+        <img class="proto-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80" alt="Confirm Safe Arrival"/>
+        <div class="proto-body">
+          <div class="proto-num">04</div>
+          <div class="proto-title">Confirm Safe Arrival</div>
+          <div class="proto-desc">Independent verification of outcomes with deliverables you can show a regulator, insurer, or board. Every engagement closes with a documented, audit-ready record of remediation.</div>
+          <span class="proto-tag">Verification &amp; Reporting</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OUR PRINCIPALS -->
+<section class="team-section">
+  <div class="wrap">
+    <p class="sec-label">Our Principals</p>
     <h2 class="sec-h">People.</h2>
 
     <div class="person">
@@ -237,12 +319,42 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
         </div>
       </div>
     </div>
+
   </div>
-</section><footer>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <svg class="cta-grid-bg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <pattern id="cg1" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,.045)" stroke-width=".5"/>
+      </pattern>
+      <pattern id="cg2" width="200" height="200" patternUnits="userSpaceOnUse">
+        <path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(255,255,255,.08)" stroke-width=".8"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#cg1)"/>
+    <rect width="100%" height="100%" fill="url(#cg2)"/>
+    <g fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1">
+      <path d="M 48 80 L 48 48 L 80 48"/>
+      <path d="M 48 48 L 36 36"/>
+    </g>
+    <text x="90" y="52" font-size="9" fill="rgba(255,255,255,.18)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="2">49°17'N 123°07'W</text>
+    <line x1="0" y1="60%" x2="100%" y2="60%" stroke="rgba(99,179,237,.05)" stroke-width="1"/>
+  </svg>
+  <div class="wrap cta-inner">
+    <h2 class="cta-h">Every compliance gap has a financial cost. We find it first.</h2>
+    <p class="cta-sub">We offer a complimentary 30-minute risk briefing for new clients. No proposal, no commitment — just a direct conversation about where your exposure sits.</p>
+    <a href="mailto:intake@wayfinder-sme.com" class="cta-btn">Book Your Risk Briefing &rarr;</a>
+  </div>
+</div>
+
+<footer>
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <div class="foot-logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="foot-logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none">
   <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
   <line x1="14" y1="4" x2="14" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
   <line x1="14" y1="18" x2="14" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -259,13 +371,13 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
       </div>
       <div>
         <div class="foot-col-h">Services</div>
-        <a href="ohs.html" class="foot-link">OHS practice</a>
+        <a href="ohs.html" class="foot-link">OHS Practice</a>
         <a href="esg.html" class="foot-link">Environmental &amp; ESG</a>
-        <a href="building.html" class="foot-link">Building sciences</a>
+        <a href="building.html" class="foot-link">Building Sciences</a>
       </div>
       <div>
         <div class="foot-col-h">Company</div>
-        <a href="about.html" class="foot-link">About us</a>
+        <a href="about.html" class="foot-link">About Us</a>
         <a href="projects.html" class="foot-link">Projects</a>
         <a href="sectors.html" class="foot-link">Sectors</a>
       </div>
@@ -290,7 +402,8 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
       </div>
     </div>
   </div>
-</footer><script>
+</footer>
+<script>
 var drawer=document.getElementById('nav-drawer');
 var backdrop=document.getElementById('drawer-backdrop');
 var hbg=document.getElementById('hamburger');
@@ -302,4 +415,6 @@ function toggleNav(){
 }
 function toggleSub(el){el.nextElementSibling.classList.toggle('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&drawer.classList.contains('open'))toggleNav();});
-</script></body></html>
+</script>
+</body>
+</html>
