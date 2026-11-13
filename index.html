@@ -13,8 +13,6 @@ html{font-size:16px;}
 body{font-family:'Inter',-apple-system,sans-serif;background:#fff;color:#0A0A0A;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
 .wrap{max-width:1400px;margin:0 auto;padding:0 48px;}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:transparent;transition:background .3s,border-color .3s;border-bottom:1px solid transparent;}
 nav.scrolled{background:#fff;border-bottom-color:#E4E4E7;}
 .nav-bar{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;}
@@ -26,8 +24,6 @@ nav.scrolled .hamburger{color:#0A0A0A;}
 .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
-
-/* DRAWER */
 .nav-drawer{position:fixed;top:0;right:0;bottom:0;width:380px;background:#0A0A0A;z-index:190;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;justify-content:center;padding:80px 48px 48px;}
 .nav-drawer.open{transform:translateX(0);}
 .drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:185;opacity:0;pointer-events:none;transition:opacity .3s;}
@@ -36,32 +32,26 @@ nav.scrolled .hamburger{color:#0A0A0A;}
 .nav-ol{font-size:22px;font-weight:800;letter-spacing:-.02em;color:rgba(255,255,255,.25);transition:color .15s;cursor:pointer;display:block;padding:6px 0;line-height:1.1;}
 .nav-ol:hover{color:#fff;}
 .nav-ol-sub{display:flex;flex-direction:column;padding-left:16px;overflow:hidden;max-height:0;transition:max-height .2s ease;}
-.nav-ol-sub.open{max-height:120px;}
-.nav-ol-sub a{font-size:13px;font-weight:500;color:rgba(255,255,255,.35);padding:3px 0;display:block;transition:color .15s;}
+.nav-ol-sub.open{max-height:160px;}
+.nav-ol-sub a{font-size:13px;font-weight:500;color:rgba(255,255,255,.35);padding:4px 0;display:block;transition:color .15s;}
 .nav-ol-sub a:hover{color:#fff;}
 .drawer-bottom{margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);}
 .drawer-cta{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.25);padding:12px 20px;display:inline-block;margin-bottom:16px;}
 .drawer-info{font-size:11px;color:rgba(255,255,255,.28);line-height:1.9;}
-
-/* HERO */
-.hero{position:relative;height:100vh;min-height:620px;overflow:hidden;background:#0A0A0A;display:flex;align-items:flex-end;}
+.hero{position:relative;height:100vh;min-height:620px;overflow:hidden;background:#060C17;display:flex;align-items:flex-end;}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38;}
-.hero-grid{position:absolute;inset:0;pointer-events:none;}
+.hero-grid{position:absolute;inset:0;pointer-events:none;width:100%;height:100%;}
 .hero-content{position:relative;z-index:2;padding:0 48px 72px;width:100%;}
 .hero-label{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:20px;}
 .hero-h{font-size:clamp(44px,7vw,100px);font-weight:800;letter-spacing:-.04em;line-height:1;color:#fff;max-width:900px;}
 .hero-sub{font-size:17px;color:rgba(255,255,255,.5);line-height:1.75;max-width:520px;margin-top:24px;}
-.hero-cta{display:inline-block;margin-top:36px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0A0A0A;background:#fff;padding:14px 28px;transition:background .15s,color .15s;}
+.hero-cta{display:inline-block;margin-top:36px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0A0A0A;background:#fff;padding:14px 28px;transition:background .15s;}
 .hero-cta:hover{background:#E4E4E7;}
-
-/* STATS */
 .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #E4E4E7;}
 .stat{padding:28px 0;text-align:center;border-right:1px solid #E4E4E7;}
 .stat:last-child{border-right:none;}
 .stat-n{font-size:28px;font-weight:800;letter-spacing:-.03em;color:#0A0A0A;}
 .stat-l{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#A1A1AA;margin-top:4px;}
-
-/* SERVICE CARDS */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);}
 .svc-card{position:relative;overflow:hidden;display:block;cursor:pointer;border-right:1px solid #E4E4E7;}
 .svc-card:last-child{border-right:none;}
@@ -73,26 +63,22 @@ nav.scrolled .hamburger{color:#0A0A0A;}
 .svc-name{font-size:clamp(18px,2vw,26px);font-weight:800;letter-spacing:-.025em;color:#fff;margin-bottom:8px;}
 .svc-desc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:16px;}
 .svc-link{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;}
-
-/* INTRO */
 .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;padding:72px 0;border-bottom:1px solid #E4E4E7;}
 .intro-h{font-size:clamp(28px,3vw,42px);font-weight:800;letter-spacing:-.04em;line-height:1.15;}
 .intro-body{font-size:15px;color:#52525B;line-height:1.9;}
 .intro-body p+p{margin-top:16px;}
-
-/* CTA STRIP */
-.cta-strip{background:#0A0A0A;padding:72px 0;}
+.cta-strip{background:linear-gradient(135deg,#060C17 0%,#0B1829 60%,#060C17 100%);padding:72px 0;position:relative;overflow:hidden;}
+.cta-grid{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.cta-inner{position:relative;z-index:2;}
 .cta-h{font-size:clamp(28px,4vw,52px);font-weight:800;letter-spacing:-.04em;color:#fff;max-width:700px;line-height:1.1;margin-bottom:28px;}
 .cta-sub{font-size:15px;color:rgba(255,255,255,.45);line-height:1.75;max-width:480px;margin-bottom:36px;}
-.cta-btn{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0A0A0A;background:#fff;padding:14px 28px;transition:background .15s;}
+.cta-btn{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0A0A0A;background:#fff;padding:14px 28px;}
 .cta-btn:hover{background:#E4E4E7;}
-
-/* FOOTER */
 footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 .foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
 .foot-logo{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#0A0A0A;margin-bottom:12px;}
 .foot-desc{font-size:13px;color:#71717A;line-height:1.75;max-width:260px;}
-.foot-social{display:flex;gap:16px;margin-top:20px;flex-wrap:wrap;}
+.foot-social{display:flex;gap:16px;margin-top:20px;}
 .foot-social a{font-size:11px;color:#A1A1AA;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:color .15s;}
 .foot-social a:hover{color:#0A0A0A;}
 .foot-col-h{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#A1A1AA;margin-bottom:14px;}
@@ -101,17 +87,14 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid #E4E4E7;}
 .foot-copy{font-size:12px;color:#A1A1AA;}
 .foot-mark{display:flex;align-items:center;gap:10px;}
-
 @media(max-width:1024px){.wrap,.nav-bar,.hero-content{padding-left:24px;padding-right:24px;}.svc-grid{grid-template-columns:1fr;}.svc-card{border-right:none;border-bottom:1px solid #E4E4E7;}.intro-grid{grid-template-columns:1fr;gap:32px;}.foot-top{grid-template-columns:1fr 1fr;}.foot-bottom{flex-direction:column;gap:8px;align-items:flex-start;}.stats-strip{grid-template-columns:1fr 1fr;}.nav-drawer{width:100%;}}
-@media(max-width:600px){.hero-h{font-size:10vw;}.foot-top{grid-template-columns:1fr;}.stats-strip{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.hero-h{font-size:10vw;}.foot-top{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav id="main-nav">
   <div class="nav-bar">
-    <a href="index.html" class="nav-logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <a href="index.html" class="nav-logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none">
   <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
   <line x1="14" y1="4" x2="14" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
   <line x1="14" y1="18" x2="14" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -126,64 +109,58 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 <div class="drawer-backdrop" id="drawer-backdrop" onclick="toggleNav()"></div>
 <div class="nav-drawer" id="nav-drawer">
   <div class="nav-ol-wrap">
-    <a href="about.html" class="nav-ol">About us</a>
+    <a href="about.html" class="nav-ol">About Us</a>
     <div>
       <span class="nav-ol" onclick="toggleSub(this)">Services</span>
       <div class="nav-ol-sub">
-        <a href="ohs.html">Occupational health &amp; safety</a>
+        <a href="ohs.html">Occupational Health &amp; Safety</a>
         <a href="esg.html">Environmental &amp; ESG</a>
-        <a href="building.html">Building sciences</a>
+        <a href="building.html">Building Sciences</a>
       </div>
     </div>
     <a href="sectors.html" class="nav-ol">Sectors</a>
     <a href="projects.html" class="nav-ol">Projects</a>
   </div>
   <div class="drawer-bottom">
-    <a href="mailto:intake@wayfinder-sme.com" class="drawer-cta">Book a risk briefing &rarr;</a>
+    <a href="mailto:intake@wayfinder-sme.com" class="drawer-cta">Book A Risk Briefing &rarr;</a>
     <div class="drawer-info">intake@wayfinder-sme.com<br>Canada &middot; USA &middot; International</div>
   </div>
 </div>
-
-<!-- HERO -->
 <section class="hero">
   <img class="hero-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80" alt="Industrial operations aerial"/>
-  <svg class="hero-grid" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="fine" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,.04)" stroke-width=".5"/></pattern><pattern id="coarse" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(255,255,255,.07)" stroke-width=".8"/></pattern></defs><rect width="100%" height="100%" fill="url(#fine)"/><rect width="100%" height="100%" fill="url(#coarse)"/></svg>
+  <svg class="hero-grid" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="fine" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,.04)" stroke-width=".5"/></pattern><pattern id="coarse" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(255,255,255,.07)" stroke-width=".8"/></pattern></defs><rect width="100%" height="100%" fill="url(#fine)"/><rect width="100%" height="100%" fill="url(#coarse)"/><g fill="none" stroke="rgba(255,255,255,.15)" stroke-width="1"><path d="M 48 80 L 48 48 L 80 48"/><path d="M 48 48 L 36 36"/></g><text x="90" y="52" font-size="9" fill="rgba(255,255,255,.15)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="2">49°17'N 123°07'W</text><line x1="0" y1="40%" x2="100%" y2="40%" stroke="rgba(99,179,237,.05)" stroke-width="1"/></svg>
   <div class="hero-content">
     <p class="hero-label">Wayfinder EHS Consulting</p>
     <h1 class="hero-h">Navigate operational risk.</h1>
     <p class="hero-sub">Occupational health & safety, environmental management, and ESG advisory — built for organizations where compliance failure is not an option.</p>
-    <a href="about.html" class="hero-cta">Learn about us &rarr;</a>
+    <a href="about.html" class="hero-cta">Learn About Us &rarr;</a>
   </div>
 </section>
-
-<!-- STATS -->
 <div class="wrap"><div class="stats-strip">
   <div class="stat"><div class="stat-n">35+</div><div class="stat-l">Years combined</div></div>
   <div class="stat"><div class="stat-n">$200M+</div><div class="stat-l">Business impact</div></div>
   <div class="stat"><div class="stat-n">Fortune 10</div><div class="stat-l">Scale delivered</div></div>
   <div class="stat"><div class="stat-n">4</div><div class="stat-l">Continents</div></div>
 </div></div>
-
-<!-- SERVICE CARDS -->
 <div class="svc-grid">
   <a href="ohs.html" class="svc-card">
     <div class="svc-accent" style="background:#C44A0A;"></div>
     <img class="svc-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80" alt="OHS"/>
     <div class="svc-overlay">
       <div class="svc-num">Practice 01</div>
-      <div class="svc-name">Occupational health &amp; safety</div>
+      <div class="svc-name">Occupational Health &amp; Safety</div>
       <div class="svc-desc">Inspection readiness, WCB management, field operations protection, and enterprise safety program design.</div>
-      <span class="svc-link">View practice &rarr;</span>
+      <span class="svc-link">View Practice &rarr;</span>
     </div>
   </a>
   <a href="esg.html" class="svc-card">
     <div class="svc-accent" style="background:#047857;"></div>
-    <img class="svc-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1000&q=80" alt="ESG"/>
+    <img class="svc-img" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1000&q=80" alt="ESG"/>
     <div class="svc-overlay">
       <div class="svc-num">Practice 02</div>
       <div class="svc-name">Environmental &amp; ESG</div>
       <div class="svc-desc">GHG auditing, emissions filings, ISO 14001, net zero strategy, and ESG disclosure under GRI and GRESB.</div>
-      <span class="svc-link">View practice &rarr;</span>
+      <span class="svc-link">View Practice &rarr;</span>
     </div>
   </a>
   <a href="building.html" class="svc-card">
@@ -191,39 +168,32 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
     <img class="svc-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1000&q=80" alt="Building Sciences"/>
     <div class="svc-overlay">
       <div class="svc-num">Practice 03</div>
-      <div class="svc-name">Building sciences</div>
+      <div class="svc-name">Building Sciences</div>
       <div class="svc-desc">Designated substance surveys, contamination management, IAQ, and building performance advisory.</div>
-      <span class="svc-link">View practice &rarr;</span>
+      <span class="svc-link">View Practice &rarr;</span>
     </div>
   </a>
 </div>
-
-<!-- INTRO -->
 <div class="wrap"><div class="intro-grid">
-  <div>
-    <h2 class="intro-h">Two principals. No associates. No outsourced delivery.</h2>
-  </div>
+  <div><h2 class="intro-h">Two principals. No associates. No outsourced delivery.</h2></div>
   <div class="intro-body">
-    <p>Wayfinder is a senior-led EHS and ESG consulting firm. Every engagement is led directly by one of our two principals — a Certified Safety Professional and a credentialed environmental scientist and sustainability strategist with more than 35 years of combined experience between them.</p>
+    <p>Wayfinder is a senior-led EHS and ESG consulting firm. Every engagement is led directly by one of our two principals — a Certified Safety Professional and a credentialed environmental scientist and sustainability strategist with more than 35 years of combined experience.</p>
     <p>We work across Canada and internationally, with active experience at Fortune 10 scale and documented advisory mandates spanning industrial, real estate, government, and institutional sectors.</p>
   </div>
 </div></div>
-
-<!-- CTA -->
 <div class="cta-strip">
-  <div class="wrap">
+  <svg class="cta-grid" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><pattern id="cg1" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,.04)" stroke-width=".5"/></pattern><pattern id="cg2" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(255,255,255,.07)" stroke-width=".8"/></pattern></defs><rect width="100%" height="100%" fill="url(#cg1)"/><rect width="100%" height="100%" fill="url(#cg2)"/><line x1="0" y1="60%" x2="100%" y2="60%" stroke="rgba(99,179,237,.05)" stroke-width="1"/></svg>
+  <div class="wrap cta-inner">
     <h2 class="cta-h">Every compliance gap has a financial cost. We find it first.</h2>
     <p class="cta-sub">We offer a complimentary 30-minute risk briefing for new clients. No proposal, no commitment — just a direct conversation about where your exposure sits.</p>
-    <a href="mailto:intake@wayfinder-sme.com" class="cta-btn">Book your risk briefing &rarr;</a>
+    <a href="mailto:intake@wayfinder-sme.com" class="cta-btn">Book Your Risk Briefing &rarr;</a>
   </div>
 </div>
-
-<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <div class="foot-logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="foot-logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none">
   <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
   <line x1="14" y1="4" x2="14" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
   <line x1="14" y1="18" x2="14" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -238,23 +208,9 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
           <a href="mailto:intake@wayfinder-sme.com">Email</a>
         </div>
       </div>
-      <div>
-        <div class="foot-col-h">Services</div>
-        <a href="ohs.html" class="foot-link">OHS practice</a>
-        <a href="esg.html" class="foot-link">Environmental &amp; ESG</a>
-        <a href="building.html" class="foot-link">Building sciences</a>
-      </div>
-      <div>
-        <div class="foot-col-h">Company</div>
-        <a href="about.html" class="foot-link">About us</a>
-        <a href="projects.html" class="foot-link">Projects</a>
-        <a href="sectors.html" class="foot-link">Sectors</a>
-      </div>
-      <div>
-        <div class="foot-col-h">Contact</div>
-        <span class="foot-link">intake@wayfinder-sme.com</span>
-        <span class="foot-link">Response &lt; 4 hours</span>
-      </div>
+      <div><div class="foot-col-h">Services</div><a href="ohs.html" class="foot-link">OHS Practice</a><a href="esg.html" class="foot-link">Environmental &amp; ESG</a><a href="building.html" class="foot-link">Building Sciences</a></div>
+      <div><div class="foot-col-h">Company</div><a href="about.html" class="foot-link">About Us</a><a href="projects.html" class="foot-link">Projects</a><a href="sectors.html" class="foot-link">Sectors</a></div>
+      <div><div class="foot-col-h">Contact</div><span class="foot-link">intake@wayfinder-sme.com</span><span class="foot-link">Response &lt; 4 hours</span></div>
     </div>
     <div class="foot-bottom">
       <span class="foot-copy">&copy; 2026 Wayfinder EHS Consulting</span>
@@ -265,7 +221,6 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
     </div>
   </div>
 </footer>
-
 <script>
 var nav=document.getElementById('main-nav');
 var drawer=document.getElementById('nav-drawer');
@@ -277,9 +232,6 @@ function toggleNav(){
   backdrop.classList.toggle('open',open);
   hbg.classList.toggle('open',open);
   document.body.style.overflow=open?'hidden':'';
-  // Keep hamburger visible in drawer color
-  if(open){hbg.style.color='#0A0A0A';}
-  else{hbg.style.color='';}
 }
 function toggleSub(el){el.nextElementSibling.classList.toggle('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&drawer.classList.contains('open'))toggleNav();});
