@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Building Sciences — Wayfinder EHS Consulting</title>
+<title>Environmental & ESG — Wayfinder EHS Consulting</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
@@ -71,16 +71,16 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 .foot-copy{font-size:12px;color:#A1A1AA;}
 .foot-mark{display:flex;align-items:center;gap:10px;}
 @media(max-width:1024px){.wrap,.nav-bar{padding-left:24px;padding-right:24px;}.foot-top{grid-template-columns:1fr 1fr;}.foot-bottom{flex-direction:column;gap:8px;align-items:flex-start;}.nav-drawer{width:100%;}.page-hero{padding:120px 0 60px;}}
-@media(max-width:600px){.foot-top{grid-template-columns:1fr;}}.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-left:1px solid #E4E4E7;border-top:1px solid #E4E4E7;}
+@media(max-width:600px){.foot-top{grid-template-columns:1fr;}}.svc-grid{align-items:start;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-left:1px solid #E4E4E7;border-top:1px solid #E4E4E7;}
 .svc-card{border-right:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;display:flex;flex-direction:column;background:#fff;transition:box-shadow .22s ease,background .22s ease;position:relative;overflow:hidden;}
-.svc-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#D97706;opacity:0;transition:opacity .22s ease;z-index:1;}
+.svc-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#047857;opacity:0;transition:opacity .22s ease;z-index:1;}
 .svc-card:hover{box-shadow:0 8px 32px rgba(10,10,10,.08);background:#FAFAFA;z-index:1;}
 .svc-card:hover::before{opacity:1;}
 .svc-img{width:100%;height:190px;object-fit:cover;display:block;transition:transform .5s ease;filter:grayscale(20%);}
 .svc-card:hover .svc-img{transform:scale(1.04);}
 .svc-card-inner{padding:28px 28px 28px;display:flex;flex-direction:column;flex:1;}
-.svc-icon{width:40px;height:40px;background:#FFFBEB;display:flex;align-items:center;justify-content:center;margin-bottom:16px;flex-shrink:0;}
-.svc-icon svg{width:20px;height:20px;stroke:#D97706;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;}
+.svc-icon{width:40px;height:40px;background:#ECFDF5;display:flex;align-items:center;justify-content:center;margin-bottom:16px;flex-shrink:0;}
+.svc-icon svg{width:20px;height:20px;stroke:#047857;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;}
 .svc-num{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A1A1AA;margin-bottom:8px;}
 .svc-title{font-size:16px;font-weight:800;letter-spacing:-.025em;color:#0A0A0A;line-height:1.25;margin-bottom:0;}
 .svc-expand{max-height:0;overflow:hidden;transition:max-height .35s ease;}
@@ -88,16 +88,12 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 .svc-body{font-size:13px;color:#52525B;line-height:1.8;margin-bottom:18px;margin-top:14px;}
 .svc-dels{list-style:none;padding:0;border-top:1px solid #E4E4E7;padding-top:14px;margin-bottom:18px;}
 .svc-dels li{font-size:12px;color:#71717A;line-height:1.6;padding:3px 0 3px 16px;position:relative;}
-.svc-dels li::before{content:'—';position:absolute;left:0;color:#D97706;font-size:10px;top:5px;}
-.svc-more{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#D97706;display:inline-flex;align-items:center;gap:5px;transition:gap .15s;}
+.svc-dels li::before{content:'—';position:absolute;left:0;color:#047857;font-size:10px;top:5px;}
+.svc-more{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#047857;display:inline-flex;align-items:center;gap:5px;transition:gap .15s;}
 .svc-card:hover .svc-more{gap:9px;}
-.svc-toggle{background:none;border:none;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#D97706;display:inline-flex;align-items:center;gap:6px;padding:0;margin-top:14px;font-family:inherit;}
+.svc-toggle{background:none;border:none;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#047857;display:inline-flex;align-items:center;gap:6px;padding:0;margin-top:14px;font-family:inherit;}
 .svc-arrow{transition:transform .2s ease;display:inline-block;font-style:normal;line-height:1;}
 .svc-card.open .svc-arrow{transform:rotate(45deg);}
-.svc-card-disabled{opacity:.6;pointer-events:none;}
-.svc-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;background:#FEF3C7;color:#92400E;margin-top:10px;}
-.warn-banner{background:#FEF3C7;border-left:3px solid #D97706;padding:16px 24px;font-size:13px;color:#92400E;font-weight:600;}
-.warn-banner-top{margin-bottom:0;}
 @media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.svc-grid{grid-template-columns:1fr;}}</style>
 </head>
@@ -157,131 +153,153 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
   <!-- scan line accent -->
   <line x1="0" y1="40%" x2="100%" y2="40%" stroke="rgba(99,179,237,.06)" stroke-width="1"/>
 </svg>
-  <img class="hero-bg-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80" alt=""/>
+  <img class="hero-bg-img" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80" alt=""/>
   <div class="wrap ph-inner">
-    <p class="ph-label">Practice 03</p>
-    <h1 class="ph-h">Building sciences.</h1>
-    <p class="ph-sub">Designated substance surveys, contamination management, IAQ, and building performance advisory for existing assets and active construction.</p>
+    <p class="ph-label">Practice 02</p>
+    <h1 class="ph-h">Environmental &amp; ESG.</h1>
+    <p class="ph-sub">Six service lines spanning GHG compliance, ESG disclosure, environmental management systems, and net zero strategy.</p>
   </div>
-</section><div class="warn-banner warn-banner-top"><div class="wrap">Services 03.5 and 03.6 are in development — full field credential availability 2027.</div></div><section class="section"><div class="wrap">
+</section><section class="section"><div class="wrap">
   <p class="sec-label">Services</p>
-  <h2 class="sec-h">Six Service Lines. One Building Sciences Partner.</h2>
+  <h2 class="sec-h">Seven Service Areas. One ESG Partner.</h2>
   <div class="svc-grid">
 
-    <!-- 03.1 DSS -->
+    <!-- 02.1 Air & Carbon combined -->
     <div class="svc-card" onclick="toggleCard(this)">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Designated Substance Surveys"/>
-      <div class="svc-card-inner">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4"/><path d="M9 12h6M9 16h4"/></svg></div>
-        <div class="svc-num">03.1</div>
-        <h3 class="svc-title">Designated Substance Surveys</h3>
-        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
-        <div class="svc-expand">
-          <p class="svc-body">Before any renovation, demolition, or trade deployment, provincial regulations require a Designated Substance Survey that identifies asbestos, lead, silica, and other hazardous materials in the building. Without one, your contractor is working blind &mdash; and your organization carries the liability when a stop-work order lands or a worker files a compensation claim.</p>
-          <ul class="svc-dels">
-            <li>Asbestos bulk sampling &amp; laboratory analysis</li>
-            <li>Lead, silica &amp; designated substance assessment</li>
-            <li>DSS report with substance registry for WorkSafeBC compliance</li>
-          </ul>
-          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 03.2 Contamination -->
-    <div class="svc-card" onclick="toggleCard(this)">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80" alt="Contamination and Abatement Management"/>
-      <div class="svc-card-inner">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <div class="svc-num">03.2</div>
-        <h3 class="svc-title">Contamination &amp; Abatement Management</h3>
-        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
-        <div class="svc-expand">
-          <p class="svc-body">Hazardous material abatement is one of the highest-liability phases of any renovation or demolition project &mdash; under-scoped contracts lead to cost overruns, failed clearance tests, and regulatory penalties that fall on the owner. We manage the full abatement lifecycle from contractor selection through air monitoring during works to signed clearance documentation that closes the owner&rsquo;s liability file.</p>
-          <ul class="svc-dels">
-            <li>Abatement scope development, tender &amp; contractor selection</li>
-            <li>Third-party air monitoring throughout active abatement works</li>
-            <li>Post-abatement clearance testing &amp; sign-off documentation</li>
-          </ul>
-          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 03.3 IAQ -->
-    <div class="svc-card" onclick="toggleCard(this)">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80" alt="Indoor Air Quality and Clearance"/>
+      <img class="svc-img" src="https://images.unsplash.com/photo-1517030330234-94c4fb948ebc?w=800&q=80" alt="Air Emissions and Carbon Management"/>
       <div class="svc-card-inner">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg></div>
-        <div class="svc-num">03.3</div>
-        <h3 class="svc-title">Indoor Air Quality &amp; Clearance Testing</h3>
+        <div class="svc-num">02.1</div>
+        <h3 class="svc-title">Air Emissions &amp; Carbon Management</h3>
         <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
         <div class="svc-expand">
-          <p class="svc-body">Poor indoor air quality drives occupant health complaints, absenteeism, and &mdash; when ignored &mdash; WorkSafeBC investigations that expose building owners and operators to enforcement. We conduct IAQ baseline testing, investigate occupant complaints, and issue post-remediation clearance reports backed by accredited laboratory analysis and defensible methodology.</p>
+          <p class="svc-body">Atmospheric compliance and greenhouse gas programs that keep your operations ahead of federal and provincial thresholds &mdash; from stack emissions monitoring through full Scope 1, 2, and 3 GHG inventories using GHG Protocol methodology. We connect air quality compliance to your carbon reduction targets in one integrated program.</p>
           <ul class="svc-dels">
-            <li>Particulate, VOC, CO&sub2; &amp; biological contaminant sampling</li>
-            <li>HVAC performance &amp; ventilation adequacy assessment</li>
-            <li>Post-abatement clearance testing &amp; occupant exposure report</li>
+            <li>Stack &amp; fugitive emissions inventory and reporting</li>
+            <li>Scope 1, 2 &amp; 3 GHG inventory (GHG Protocol)</li>
+            <li>ECCC, BPS / BEPS &amp; provincial regulatory filing</li>
           </ul>
           <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
         </div>
       </div>
     </div>
 
-    <!-- 03.4 Mould -->
+    <!-- 02.2 Water Quality -->
     <div class="svc-card" onclick="toggleCard(this)">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1584922491159-dc3498c3a0be?w=800&q=80" alt="Mould Assessment and Remediation"/>
+      <img class="svc-img" src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?w=800&q=80" alt="Water Quality and Stormwater"/>
       <div class="svc-card-inner">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
-        <div class="svc-num">03.4</div>
-        <h3 class="svc-title">Mould Assessment &amp; Remediation</h3>
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg></div>
+        <div class="svc-num">02.2</div>
+        <h3 class="svc-title">Water Quality &amp; Stormwater</h3>
         <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
         <div class="svc-expand">
-          <p class="svc-body">Visible mould growth in a commercial building is a legal liability, an insurance event, and an occupant health crisis &mdash; often simultaneously. We conduct systematic mould investigations with air and surface sampling, develop remediation scopes that address moisture sources (not just surface growth), oversee contractor work, and issue clearance certificates that protect the owner post-project.</p>
+          <p class="svc-body">Surface water and groundwater compliance programs that protect discharge authorization and satisfy municipal stormwater requirements &mdash; from industrial effluent characterization to development-site SWPPP design. We keep your discharge permits clean and your monitoring records defensible under regulatory scrutiny.</p>
           <ul class="svc-dels">
-            <li>Mould inspection, air &amp; surface sampling, lab analysis</li>
-            <li>Remediation scope addressing root moisture pathway</li>
-            <li>Contractor oversight &amp; post-remediation clearance certificate</li>
+            <li>Effluent characterization &amp; discharge permit support</li>
+            <li>Stormwater pollution prevention plan (SWPPP) design</li>
+            <li>Water quality monitoring program &amp; regulatory reporting</li>
           </ul>
           <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
         </div>
       </div>
     </div>
 
-    <!-- 03.5 Building Envelope (in development) -->
-    <div class="svc-card svc-card-disabled">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" alt="Building Envelope Assessment"/>
+    <!-- 02.3 Energy -->
+    <div class="svc-card" onclick="toggleCard(this)">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80" alt="Energy Efficiency and Retrofit"/>
       <div class="svc-card-inner">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
-        <div class="svc-num">03.5</div>
-        <h3 class="svc-title">Building Envelope Assessment</h3>
-        <span class="svc-badge">Available 2027</span>
-        <div class="svc-expand" style="max-height:none;">
-          <p class="svc-body">Building envelope failures &mdash; moisture intrusion, thermal bridging, and cladding defects &mdash; are among the costliest defect categories an asset owner can inherit. We conduct performance reviews and moisture management assessments that identify failure modes and sequence capital remediation before water damage escalates to structural liability.</p>
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="svc-num">02.3</div>
+        <h3 class="svc-title">Energy Efficiency &amp; Retrofit</h3>
+        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
+        <div class="svc-expand">
+          <p class="svc-body">Capital sequencing ranked by carbon reduction per dollar invested &mdash; not vendor recommendations. We identify utility incentive programs and build phased implementation roadmaps that survive board review and deliver measurable reductions against your energy intensity targets.</p>
           <ul class="svc-dels">
-            <li>Moisture intrusion investigation &amp; leak source mapping</li>
-            <li>Thermal performance review &amp; energy loss assessment</li>
-            <li>Remediation sequencing &amp; capital planning advisory</li>
+            <li>Energy audit across facilities &amp; asset portfolio</li>
+            <li>Retrofit ROI prioritization &amp; capital planning roadmap</li>
+            <li>Utility incentive identification (BC Hydro, FortisBC)</li>
           </ul>
+          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
         </div>
       </div>
     </div>
 
-    <!-- 03.6 Site Environmental (in development) -->
-    <div class="svc-card svc-card-disabled">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80" alt="Site Environmental Field Services"/>
+    <!-- 02.4 ISO 14001 -->
+    <div class="svc-card" onclick="toggleCard(this)">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80" alt="ISO 14001 Environmental Auditing"/>
       <div class="svc-card-inner">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 00-8 8c0 5.4 7.05 11.5 7.35 11.76a1 1 0 001.3 0C13 21.5 20 15.4 20 10a8 8 0 00-8-8z"/></svg></div>
-        <div class="svc-num">03.6</div>
-        <h3 class="svc-title">Site Environmental Field Services</h3>
-        <span class="svc-badge">Available 2027</span>
-        <div class="svc-expand" style="max-height:none;">
-          <p class="svc-body">Phase I/II Environmental Site Assessments provide the environmental liability picture that every acquisition, disposition, and lender due diligence process requires. We support site transactions with desktop ESA reviews, screening-level field work, and regulatory liaison that quantifies environmental risk exposure before it becomes a deal condition or a post-closing dispute.</p>
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M8 11l2 2 4-4"/></svg></div>
+        <div class="svc-num">02.4</div>
+        <h3 class="svc-title">ISO 14001 Environmental Auditing</h3>
+        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
+        <div class="svc-expand">
+          <p class="svc-body">ISO 14001 certification opens doors to international supply chains, enterprise procurement programs, and lender ESG covenants that your competitors without it cannot access. We conduct gap assessments, build your Environmental Management System from policy through procedure, and prepare your organization for third-party certification audit.</p>
           <ul class="svc-dels">
-            <li>Phase I ESA desktop review &amp; site reconnaissance</li>
-            <li>Screening-level soil &amp; groundwater field sampling</li>
-            <li>Transaction risk summary &amp; regulatory liaison support</li>
+            <li>ISO 14001 gap analysis &amp; EMS development</li>
+            <li>Environmental aspects, impacts &amp; legal register</li>
+            <li>Internal audit program &amp; certification readiness review</li>
           </ul>
+          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02.5 ESG Reporting -->
+    <div class="svc-card" onclick="toggleCard(this)">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="ESG Reporting and Disclosure"/>
+      <div class="svc-card-inner">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="svc-num">02.5</div>
+        <h3 class="svc-title">ESG Reporting &amp; Disclosure</h3>
+        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
+        <div class="svc-expand">
+          <p class="svc-body">GRI-aligned and GRESB-ready sustainability disclosures built for investor and lender audiences &mdash; from materiality assessment through stakeholder package design and annual report integration. We produce disclosures that hold up under institutional ESG due diligence and satisfy the frameworks your capital partners require.</p>
+          <ul class="svc-dels">
+            <li>GRI Standards reporting &amp; materiality assessment</li>
+            <li>GRESB submission preparation &amp; benchmarking</li>
+            <li>Investor-ready ESG disclosure package &amp; data room</li>
+          </ul>
+          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02.6 Net Zero -->
+    <div class="svc-card" onclick="toggleCard(this)">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80" alt="Net Zero and Climate Strategy"/>
+      <div class="svc-card-inner">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+        <div class="svc-num">02.6</div>
+        <h3 class="svc-title">Net Zero &amp; Climate Strategy</h3>
+        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
+        <div class="svc-expand">
+          <p class="svc-body">Science-based target setting and climate transition roadmap design &mdash; from SBTi target scoping through abatement pathway analysis to board-ready strategy decks that hold up under institutional investor due diligence. We connect emissions data to capital planning and procurement commitments your stakeholders can track.</p>
+          <ul class="svc-dels">
+            <li>SBTi target scoping &amp; abatement pathway analysis</li>
+            <li>Carbon offset strategy &amp; registry management</li>
+            <li>Board-level climate transition strategy deck</li>
+          </ul>
+          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02.7 Materials & Recycling -->
+    <div class="svc-card" onclick="toggleCard(this)">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&q=80" alt="Materials Recycling and Waste Reduction"/>
+      <div class="svc-card-inner">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg></div>
+        <div class="svc-num">02.7</div>
+        <h3 class="svc-title">Materials, Recycling &amp; Waste Reduction</h3>
+        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
+        <div class="svc-expand">
+          <p class="svc-body">Waste diversion programs that reduce landfill costs, satisfy extended producer responsibility requirements, and demonstrate circular economy commitments to customers and lenders who track your Scope 3 performance. We build material flow inventories, waste audits, and procurement criteria that keep waste out of your cost base and your ESG scorecard.</p>
+          <ul class="svc-dels">
+            <li>Waste audit &amp; material flow inventory</li>
+            <li>Diversion program design &amp; contractor vetting</li>
+            <li>EPR compliance &amp; circular economy reporting</li>
+          </ul>
+          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -377,7 +395,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&drawer.clas
 <script>
 function toggleCard(card){
   var el = (card && card.classList && card.classList.contains('svc-card')) ? card : (card.closest ? card.closest('.svc-card') : card);
-  if(!el || el.classList.contains('svc-card-disabled')) return;
+  if(!el) return;
   var wasOpen = el.classList.contains('open');
   var siblings = el.parentElement.querySelectorAll('.svc-card');
   siblings.forEach(function(c){ c.classList.remove('open'); });

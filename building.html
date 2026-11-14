@@ -71,7 +71,7 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 .foot-copy{font-size:12px;color:#A1A1AA;}
 .foot-mark{display:flex;align-items:center;gap:10px;}
 @media(max-width:1024px){.wrap,.nav-bar{padding-left:24px;padding-right:24px;}.foot-top{grid-template-columns:1fr 1fr;}.foot-bottom{flex-direction:column;gap:8px;align-items:flex-start;}.nav-drawer{width:100%;}.page-hero{padding:120px 0 60px;}}
-@media(max-width:600px){.foot-top{grid-template-columns:1fr;}}.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-left:1px solid #E4E4E7;border-top:1px solid #E4E4E7;}
+@media(max-width:600px){.foot-top{grid-template-columns:1fr;}}.svc-grid{align-items:start;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-left:1px solid #E4E4E7;border-top:1px solid #E4E4E7;}
 .svc-card{border-right:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;display:flex;flex-direction:column;background:#fff;transition:box-shadow .22s ease,background .22s ease;position:relative;overflow:hidden;}
 .svc-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#D97706;opacity:0;transition:opacity .22s ease;z-index:1;}
 .svc-card:hover{box-shadow:0 8px 32px rgba(10,10,10,.08);background:#FAFAFA;z-index:1;}
@@ -170,18 +170,18 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 
     <!-- 03.1 DSS -->
     <div class="svc-card" onclick="toggleCard(this)">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80" alt="Designated Substance Surveys"/>
+      <img class="svc-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Designated Substance Surveys"/>
       <div class="svc-card-inner">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4"/><path d="M9 12h6M9 16h4"/></svg></div>
         <div class="svc-num">03.1</div>
         <h3 class="svc-title">Designated Substance Surveys</h3>
         <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
         <div class="svc-expand">
-          <p class="svc-body">Comprehensive building assessments identifying asbestos, lead, silica, and other designated substances before renovation, demolition, or trade deployment &mdash; protecting your workers and your project timeline from regulatory shutdowns.</p>
+          <p class="svc-body">Before any renovation, demolition, or trade deployment, provincial regulations require a Designated Substance Survey that identifies asbestos, lead, silica, and other hazardous materials in the building. Without one, your contractor is working blind &mdash; and your organization carries the liability when a stop-work order lands or a worker files a compensation claim.</p>
           <ul class="svc-dels">
             <li>Asbestos bulk sampling &amp; laboratory analysis</li>
-            <li>Lead paint assessment &amp; substance registry</li>
-            <li>DSS report for WorkSafeBC compliance</li>
+            <li>Lead, silica &amp; designated substance assessment</li>
+            <li>DSS report with substance registry for WorkSafeBC compliance</li>
           </ul>
           <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
         </div>
@@ -190,18 +190,18 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 
     <!-- 03.2 Contamination -->
     <div class="svc-card" onclick="toggleCard(this)">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&q=80" alt="Contamination and Abatement Management"/>
+      <img class="svc-img" src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80" alt="Contamination and Abatement Management"/>
       <div class="svc-card-inner">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <div class="svc-num">03.2</div>
         <h3 class="svc-title">Contamination &amp; Abatement Management</h3>
         <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
         <div class="svc-expand">
-          <p class="svc-body">End-to-end project management of hazardous material abatement &mdash; from contractor selection and scope writing through air monitoring during works to final clearance documentation that protects the owner post-project.</p>
+          <p class="svc-body">Hazardous material abatement is one of the highest-liability phases of any renovation or demolition project &mdash; under-scoped contracts lead to cost overruns, failed clearance tests, and regulatory penalties that fall on the owner. We manage the full abatement lifecycle from contractor selection through air monitoring during works to signed clearance documentation that closes the owner&rsquo;s liability file.</p>
           <ul class="svc-dels">
-            <li>Abatement scope development &amp; contractor tender</li>
-            <li>Air monitoring during active abatement works</li>
-            <li>Final clearance documentation &amp; sign-off</li>
+            <li>Abatement scope development, tender &amp; contractor selection</li>
+            <li>Third-party air monitoring throughout active abatement works</li>
+            <li>Post-abatement clearance testing &amp; sign-off documentation</li>
           </ul>
           <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
         </div>
@@ -210,18 +210,18 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 
     <!-- 03.3 IAQ -->
     <div class="svc-card" onclick="toggleCard(this)">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80" alt="Indoor Air Quality and Clearance"/>
+      <img class="svc-img" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80" alt="Indoor Air Quality and Clearance"/>
       <div class="svc-card-inner">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg></div>
         <div class="svc-num">03.3</div>
-        <h3 class="svc-title">Indoor Air Quality &amp; Clearance</h3>
+        <h3 class="svc-title">Indoor Air Quality &amp; Clearance Testing</h3>
         <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
         <div class="svc-expand">
-          <p class="svc-body">IAQ baseline testing, occupant complaint investigations, and post-remediation clearance sampling &mdash; backed by laboratory analysis and a defensible report that withstands regulatory or insurance scrutiny.</p>
+          <p class="svc-body">Poor indoor air quality drives occupant health complaints, absenteeism, and &mdash; when ignored &mdash; WorkSafeBC investigations that expose building owners and operators to enforcement. We conduct IAQ baseline testing, investigate occupant complaints, and issue post-remediation clearance reports backed by accredited laboratory analysis and defensible methodology.</p>
           <ul class="svc-dels">
-            <li>Particulate, VOC &amp; CO&sub2; sampling</li>
-            <li>HVAC &amp; ventilation performance assessment</li>
-            <li>Post-abatement clearance testing &amp; report</li>
+            <li>Particulate, VOC, CO&sub2; &amp; biological contaminant sampling</li>
+            <li>HVAC performance &amp; ventilation adequacy assessment</li>
+            <li>Post-abatement clearance testing &amp; occupant exposure report</li>
           </ul>
           <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
         </div>
@@ -237,11 +237,11 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
         <h3 class="svc-title">Mould Assessment &amp; Remediation</h3>
         <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
         <div class="svc-expand">
-          <p class="svc-body">Visible mould investigation, air and surface sampling, remediation scope development, and clearance verification for occupied commercial buildings &mdash; protecting occupant health and limiting owner liability.</p>
+          <p class="svc-body">Visible mould growth in a commercial building is a legal liability, an insurance event, and an occupant health crisis &mdash; often simultaneously. We conduct systematic mould investigations with air and surface sampling, develop remediation scopes that address moisture sources (not just surface growth), oversee contractor work, and issue clearance certificates that protect the owner post-project.</p>
           <ul class="svc-dels">
-            <li>Mould inspection, sampling &amp; lab analysis</li>
-            <li>Remediation scope, specification &amp; contractor oversight</li>
-            <li>Post-remediation clearance &amp; occupant report</li>
+            <li>Mould inspection, air &amp; surface sampling, lab analysis</li>
+            <li>Remediation scope addressing root moisture pathway</li>
+            <li>Contractor oversight &amp; post-remediation clearance certificate</li>
           </ul>
           <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
         </div>
@@ -250,18 +250,18 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 
     <!-- 03.5 Building Envelope (in development) -->
     <div class="svc-card svc-card-disabled">
-      <img class="svc-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Building Envelope Assessment"/>
+      <img class="svc-img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" alt="Building Envelope Assessment"/>
       <div class="svc-card-inner">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
         <div class="svc-num">03.5</div>
         <h3 class="svc-title">Building Envelope Assessment</h3>
         <span class="svc-badge">Available 2027</span>
         <div class="svc-expand" style="max-height:none;">
-          <p class="svc-body">Building envelope performance review and moisture management advisory for existing and acquired assets &mdash; identifying failure modes before they escalate to structural damage or litigation.</p>
+          <p class="svc-body">Building envelope failures &mdash; moisture intrusion, thermal bridging, and cladding defects &mdash; are among the costliest defect categories an asset owner can inherit. We conduct performance reviews and moisture management assessments that identify failure modes and sequence capital remediation before water damage escalates to structural liability.</p>
           <ul class="svc-dels">
-            <li>Moisture intrusion investigation</li>
-            <li>Thermal performance review</li>
-            <li>Capital planning advisory</li>
+            <li>Moisture intrusion investigation &amp; leak source mapping</li>
+            <li>Thermal performance review &amp; energy loss assessment</li>
+            <li>Remediation sequencing &amp; capital planning advisory</li>
           </ul>
         </div>
       </div>
@@ -276,11 +276,11 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
         <h3 class="svc-title">Site Environmental Field Services</h3>
         <span class="svc-badge">Available 2027</span>
         <div class="svc-expand" style="max-height:none;">
-          <p class="svc-body">Phase I/II ESA support, soil and groundwater screening, and environmental baseline studies for site transactions &mdash; limiting environmental liability exposure at acquisition or disposition.</p>
+          <p class="svc-body">Phase I/II Environmental Site Assessments provide the environmental liability picture that every acquisition, disposition, and lender due diligence process requires. We support site transactions with desktop ESA reviews, screening-level field work, and regulatory liaison that quantifies environmental risk exposure before it becomes a deal condition or a post-closing dispute.</p>
           <ul class="svc-dels">
-            <li>Phase I ESA desktop review</li>
-            <li>Screening level field work</li>
-            <li>Transaction risk summary</li>
+            <li>Phase I ESA desktop review &amp; site reconnaissance</li>
+            <li>Screening-level soil &amp; groundwater field sampling</li>
+            <li>Transaction risk summary &amp; regulatory liaison support</li>
           </ul>
         </div>
       </div>
