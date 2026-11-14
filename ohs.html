@@ -166,7 +166,14 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 .svc-card:hover .svc-more{gap:9px;}
 
 @media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:600px){.svc-grid{grid-template-columns:1fr;}}</style>
+@media(max-width:600px){.svc-grid{grid-template-columns:1fr;}}
+/* accordion */
+.svc-expand{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.svc-card.open .svc-expand{max-height:600px;}
+.svc-toggle{background:none;border:none;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#C44A0A;display:inline-flex;align-items:center;gap:6px;padding:0;margin-top:12px;font-family:inherit;}
+.svc-arrow{transition:transform .2s ease;display:inline-block;font-style:normal;line-height:1;}
+.svc-card.open .svc-arrow{transform:rotate(45deg);}
+</style>
 </head>
 <body>
 <nav id="main-nav">
@@ -236,12 +243,14 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
   <div class="svc-grid">
 
     <!-- 01 Training -->
-    <div class="svc-card">
+    <div class="svc-card" onclick="toggleCard(this)">
       <div class="svc-icon">
         <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3.33 2 8.67 2 12 0v-5"/></svg>
       </div>
       <div class="svc-num">01</div>
       <h3 class="svc-title">Build A Workforce That Stays Compliant</h3>
+            <button class="svc-toggle" onclick="toggleCard(this.closest('[class*=svc-card]'))">Learn More <i class="svc-arrow">+</i></button>
+      <div class="svc-expand">
       <p class="svc-body">Regulatory competency gaps are the leading precursor to stop-work orders and lost-time claims &mdash; both of which carry costs your insurance premium reflects for years. We design and deliver role-specific training programs that close those gaps before they become enforcement events.</p>
       <ul class="svc-dels">
         <li>WHMIS / GHS &amp; controlled products certification</li>
@@ -249,15 +258,18 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
         <li>Custom new-hire OHS onboarding programs</li>
       </ul>
       <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Learn More <span>&rarr;</span></a>
+      </div>
     </div>
 
     <!-- 02 WCB -->
-    <div class="svc-card">
+    <div class="svc-card" onclick="toggleCard(this)">
       <div class="svc-icon">
         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
       </div>
       <div class="svc-num">02</div>
       <h3 class="svc-title">Control The Costs Nobody Budgets For</h3>
+            <button class="svc-toggle" onclick="toggleCard(this.closest('[class*=svc-card]'))">Learn More <i class="svc-arrow">+</i></button>
+      <div class="svc-expand">
       <p class="svc-body">A single lost-time incident can follow your WCB experience rating for three years, compounding insurance premiums and tender disqualifications long after the claim closes. We manage the full claims lifecycle &mdash; from first report to return-to-work &mdash; to protect your rate and keep workers in productive roles.</p>
       <ul class="svc-dels">
         <li>Claims advocacy &amp; adjudicator liaison</li>
@@ -265,15 +277,18 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
         <li>WCB experience rating review &amp; appeals</li>
       </ul>
       <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Learn More <span>&rarr;</span></a>
+      </div>
     </div>
 
     <!-- 03 HSMS -->
-    <div class="svc-card">
+    <div class="svc-card" onclick="toggleCard(this)">
       <div class="svc-icon">
         <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4"/><path d="M9 12h6M9 16h4"/></svg>
       </div>
       <div class="svc-num">03</div>
       <h3 class="svc-title">A Safety Program That Stands Up To Scrutiny</h3>
+            <button class="svc-toggle" onclick="toggleCard(this.closest('[class*=svc-card]'))">Learn More <i class="svc-arrow">+</i></button>
+      <div class="svc-expand">
       <p class="svc-body">An OHS management system is the difference between a defensible safety record and an improvised one &mdash; regulators and insurers know the difference on inspection day. We build custom-fit programs from policy through procedure, designed for your operations and audit-ready from day one.</p>
       <ul class="svc-dels">
         <li>OHS policy, program &amp; procedure development</li>
@@ -281,15 +296,18 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
         <li>Contractor safety management &amp; prequalification</li>
       </ul>
       <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Learn More <span>&rarr;</span></a>
+      </div>
     </div>
 
     <!-- 04 Audits -->
-    <div class="svc-card">
+    <div class="svc-card" onclick="toggleCard(this)">
       <div class="svc-icon">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v3h3"/></svg>
       </div>
       <div class="svc-num">04</div>
       <h3 class="svc-title">Find The Gap Before The Regulator Does</h3>
+            <button class="svc-toggle" onclick="toggleCard(this.closest('[class*=svc-card]'))">Learn More <i class="svc-arrow">+</i></button>
+      <div class="svc-expand">
       <p class="svc-body">Regulatory inspections don&rsquo;t announce themselves, but their consequences compound immediately &mdash; stop-work orders, penalty assessments, and reputational exposure that affects your next bid. We conduct systematic gap assessments against current standards and hand you a prioritized remediation roadmap.</p>
       <ul class="svc-dels">
         <li>WorkSafeBC regulatory gap assessment</li>
@@ -297,15 +315,18 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
         <li>Site walkthrough with corrective action plan</li>
       </ul>
       <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Learn More <span>&rarr;</span></a>
+      </div>
     </div>
 
     <!-- 05 Risk -->
-    <div class="svc-card">
+    <div class="svc-card" onclick="toggleCard(this)">
       <div class="svc-icon">
         <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
       </div>
       <div class="svc-num">05</div>
       <h3 class="svc-title">Quantify The Risk Before It Quantifies You</h3>
+            <button class="svc-toggle" onclick="toggleCard(this.closest('[class*=svc-card]'))">Learn More <i class="svc-arrow">+</i></button>
+      <div class="svc-expand">
       <p class="svc-body">Unassessed hazards don&rsquo;t disappear &mdash; they become incidents, insurance events, and legal liabilities that arrive without warning. We systematically identify, evaluate, and control physical, chemical, and ergonomic hazard vectors before they reach your incident log.</p>
       <ul class="svc-dels">
         <li>Job Hazard Analysis (JHA) &amp; field risk surveys</li>
@@ -313,15 +334,18 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
         <li>Chemical &amp; physical hazard control documentation</li>
       </ul>
       <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Learn More <span>&rarr;</span></a>
+      </div>
     </div>
 
     <!-- 06 Incident -->
-    <div class="svc-card">
+    <div class="svc-card" onclick="toggleCard(this)">
       <div class="svc-icon">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       </div>
       <div class="svc-num">06</div>
       <h3 class="svc-title">Independent Investigations That Close Liability</h3>
+            <button class="svc-toggle" onclick="toggleCard(this.closest('[class*=svc-card]'))">Learn More <i class="svc-arrow">+</i></button>
+      <div class="svc-expand">
       <p class="svc-body">Internal investigations are rarely objective, and regulators and insurers both know it &mdash; which is why a credible third-party investigation is often the most cost-effective tool available after a serious incident. We conduct defensible root cause analyses and produce regulatory-ready reports that withstand scrutiny.</p>
       <ul class="svc-dels">
         <li>Third-party investigation &amp; witness interviews</li>
@@ -329,6 +353,7 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
         <li>Regulatory reporting &amp; preventive action plan</li>
       </ul>
       <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Learn More <span>&rarr;</span></a>
+      </div>
     </div>
 
   </div></div></section><div class="cta-strip">
@@ -418,4 +443,14 @@ function toggleNav(){
 }
 function toggleSub(el){el.nextElementSibling.classList.toggle('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&drawer.classList.contains('open'))toggleNav();});
-</script></body></html>
+</script>
+<script>
+function toggleCard(card){
+  var el = card.closest ? card.closest('.svc-card') : card;
+  var wasOpen = el.classList.contains('open');
+  var siblings = el.parentElement.querySelectorAll('.svc-card');
+  siblings.forEach(function(c){ c.classList.remove('open'); });
+  if(!wasOpen) el.classList.add('open');
+}
+</script>
+</body></html>

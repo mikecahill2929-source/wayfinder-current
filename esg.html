@@ -71,19 +71,31 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 .foot-copy{font-size:12px;color:#A1A1AA;}
 .foot-mark{display:flex;align-items:center;gap:10px;}
 @media(max-width:1024px){.wrap,.nav-bar{padding-left:24px;padding-right:24px;}.foot-top{grid-template-columns:1fr 1fr;}.foot-bottom{flex-direction:column;gap:8px;align-items:flex-start;}.nav-drawer{width:100%;}.page-hero{padding:120px 0 60px;}}
-@media(max-width:600px){.foot-top{grid-template-columns:1fr;}}.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid #E4E4E7;border-top:1px solid #E4E4E7;}
-.ptile{border-right:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;overflow:hidden;}
-.ptile-img{width:100%;height:200px;object-fit:cover;display:block;transition:transform .5s ease;filter:grayscale(20%);}
-.ptile:hover .ptile-img{transform:scale(1.04);}
-.ptile-body{padding:28px 24px 32px;}
-.ptile-num{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#047857;margin-bottom:8px;}
-.ptile-name{font-size:17px;font-weight:800;letter-spacing:-.025em;color:#0A0A0A;margin-bottom:10px;}
-.ptile-desc{font-size:13px;color:#52525B;line-height:1.75;margin-bottom:16px;}
-.ptile-dels{list-style:none;padding:0;border-top:1px solid #E4E4E7;padding-top:14px;}
-.ptile-dels li{font-size:12px;color:#71717A;padding:3px 0;padding-left:14px;position:relative;}
-.ptile-dels li::before{content:'—';position:absolute;left:0;color:#047857;font-size:10px;}
-@media(max-width:1024px){.practice-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.practice-grid{grid-template-columns:1fr;}}.ptile-dels li::before{color:#047857!important;}</style>
+@media(max-width:600px){.foot-top{grid-template-columns:1fr;}}.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-left:1px solid #E4E4E7;border-top:1px solid #E4E4E7;}
+.svc-card{border-right:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;display:flex;flex-direction:column;background:#fff;transition:box-shadow .22s ease,background .22s ease;position:relative;overflow:hidden;}
+.svc-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#047857;opacity:0;transition:opacity .22s ease;z-index:1;}
+.svc-card:hover{box-shadow:0 8px 32px rgba(10,10,10,.08);background:#FAFAFA;z-index:1;}
+.svc-card:hover::before{opacity:1;}
+.svc-img{width:100%;height:190px;object-fit:cover;display:block;transition:transform .5s ease;filter:grayscale(20%);}
+.svc-card:hover .svc-img{transform:scale(1.04);}
+.svc-card-inner{padding:28px 28px 28px;display:flex;flex-direction:column;flex:1;}
+.svc-icon{width:40px;height:40px;background:#ECFDF5;display:flex;align-items:center;justify-content:center;margin-bottom:16px;flex-shrink:0;}
+.svc-icon svg{width:20px;height:20px;stroke:#047857;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;}
+.svc-num{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A1A1AA;margin-bottom:8px;}
+.svc-title{font-size:16px;font-weight:800;letter-spacing:-.025em;color:#0A0A0A;line-height:1.25;margin-bottom:0;}
+.svc-expand{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.svc-card.open .svc-expand{max-height:600px;}
+.svc-body{font-size:13px;color:#52525B;line-height:1.8;margin-bottom:18px;margin-top:14px;}
+.svc-dels{list-style:none;padding:0;border-top:1px solid #E4E4E7;padding-top:14px;margin-bottom:18px;}
+.svc-dels li{font-size:12px;color:#71717A;line-height:1.6;padding:3px 0 3px 16px;position:relative;}
+.svc-dels li::before{content:'—';position:absolute;left:0;color:#047857;font-size:10px;top:5px;}
+.svc-more{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#047857;display:inline-flex;align-items:center;gap:5px;transition:gap .15s;}
+.svc-card:hover .svc-more{gap:9px;}
+.svc-toggle{background:none;border:none;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#047857;display:inline-flex;align-items:center;gap:6px;padding:0;margin-top:14px;font-family:inherit;}
+.svc-arrow{transition:transform .2s ease;display:inline-block;font-style:normal;line-height:1;}
+.svc-card.open .svc-arrow{transform:rotate(45deg);}
+@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.svc-grid{grid-template-columns:1fr;}}</style>
 </head>
 <body>
 <nav id="main-nav">
@@ -149,56 +161,130 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
   </div>
 </section><section class="section"><div class="wrap">
   <p class="sec-label">Services</p>
-  <h2 class="sec-h">Practice 02 — Environmental &amp; ESG services.</h2>
-  <div class="practice-grid"><div class="ptile">
-  <img class="ptile-img" src="https://images.unsplash.com/photo-1517030330234-94c4fb948ebc?w=800&q=80" alt="Air Emissions Management"/>
-  <div class="ptile-body">
-    <div class="ptile-num" style="color:#047857">02.1</div>
-    <div class="ptile-name">Air Emissions Management</div>
-    <div class="ptile-desc">Atmospheric compliance programs covering stack emissions, ambient air quality, and regulatory reporting obligations under federal and provincial frameworks.</div>
-    <ul class="ptile-dels" style="--accent:#047857"><li>Stack and fugitive emissions inventory</li><li>Ambient air quality baseline</li><li>ECCC &amp; provincial reporting</li><li>Permit condition management</li></ul>
-  </div>
-</div><div class="ptile">
-  <img class="ptile-img" src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=800&q=80" alt="Water Quality &amp; Stormwater"/>
-  <div class="ptile-body">
-    <div class="ptile-num" style="color:#047857">02.2</div>
-    <div class="ptile-name">Water Quality &amp; Stormwater</div>
-    <div class="ptile-desc">Surface water and groundwater compliance programs, stormwater management planning, and discharge authorization support for industrial and development sites.</div>
-    <ul class="ptile-dels" style="--accent:#047857"><li>Effluent characterization</li><li>Stormwater pollution prevention plan</li><li>Discharge permit support</li><li>Monitoring program design</li></ul>
-  </div>
-</div><div class="ptile">
-  <img class="ptile-img" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80" alt="Energy Efficiency &amp; Retrofit"/>
-  <div class="ptile-body">
-    <div class="ptile-num" style="color:#047857">02.3</div>
-    <div class="ptile-name">Energy Efficiency &amp; Retrofit</div>
-    <div class="ptile-desc">Capital sequencing ranked by carbon reduction per dollar invested — not vendor recommendations. Utility incentive identification included.</div>
-    <ul class="ptile-dels" style="--accent:#047857"><li>Energy audit across assets</li><li>Retrofit ROI prioritization</li><li>Utility incentive identification</li><li>Capital planning roadmap</li></ul>
-  </div>
-</div><div class="ptile">
-  <img class="ptile-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Carbon &amp; GHG Auditing"/>
-  <div class="ptile-body">
-    <div class="ptile-num" style="color:#047857">02.4</div>
-    <div class="ptile-name">Carbon &amp; GHG Auditing</div>
-    <div class="ptile-desc">Full Scope 1, 2, and 3 greenhouse gas inventories using GHG Protocol methodology, with regulatory filing support from ECCC to municipal BEPS requirements.</div>
-    <ul class="ptile-dels" style="--accent:#047857"><li>Utility and fuel data extraction</li><li>Emissions factor application</li><li>Intensity ratio benchmarking</li><li>BPS / BEPS compliance filing</li></ul>
-  </div>
-</div><div class="ptile">
-  <img class="ptile-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="ESG Reporting &amp; Disclosure"/>
-  <div class="ptile-body">
-    <div class="ptile-num" style="color:#047857">02.5</div>
-    <div class="ptile-name">ESG Reporting &amp; Disclosure</div>
-    <div class="ptile-desc">GRI-aligned and GRESB-ready sustainability disclosures built for investor and lender audiences, including materiality assessment and stakeholder package design.</div>
-    <ul class="ptile-dels" style="--accent:#047857"><li>GRI Standards reporting</li><li>GRESB submission support</li><li>ESG materiality assessment</li><li>Stakeholder disclosure package</li></ul>
-  </div>
-</div><div class="ptile">
-  <img class="ptile-img" src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80" alt="Net Zero &amp; Climate Strategy"/>
-  <div class="ptile-body">
-    <div class="ptile-num" style="color:#047857">02.6</div>
-    <div class="ptile-name">Net Zero &amp; Climate Strategy</div>
-    <div class="ptile-desc">Science-based target setting and transition roadmap design — from SBTi target scoping through abatement pathway analysis to board-ready strategy decks.</div>
-    <ul class="ptile-dels" style="--accent:#047857"><li>SBTi target scoping</li><li>Abatement pathway analysis</li><li>Carbon offset strategy</li><li>Board-level strategy deck</li></ul>
-  </div>
-</div></div></div></section><div class="cta-strip">
+  <h2 class="sec-h">Six Service Areas. One Environmental Partner.</h2>
+  <div class="svc-grid">
+
+    <!-- 02.1 Air Emissions -->
+    <div class="svc-card" onclick="toggleCard(this)">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1517030330234-94c4fb948ebc?w=800&q=80" alt="Air Emissions Management"/>
+      <div class="svc-card-inner">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg></div>
+        <div class="svc-num">02.1</div>
+        <h3 class="svc-title">Air Emissions Management</h3>
+        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
+        <div class="svc-expand">
+          <p class="svc-body">Atmospheric compliance programs that keep your operations ahead of federal and provincial regulatory thresholds &mdash; before an exceedance triggers an enforcement response or permit review.</p>
+          <ul class="svc-dels">
+            <li>Stack &amp; fugitive emissions inventory</li>
+            <li>Ambient air quality baseline assessment</li>
+            <li>ECCC &amp; provincial regulatory reporting</li>
+          </ul>
+          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02.2 Water Quality -->
+    <div class="svc-card" onclick="toggleCard(this)">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=800&q=80" alt="Water Quality and Stormwater"/>
+      <div class="svc-card-inner">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg></div>
+        <div class="svc-num">02.2</div>
+        <h3 class="svc-title">Water Quality &amp; Stormwater</h3>
+        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
+        <div class="svc-expand">
+          <p class="svc-body">Surface water and groundwater compliance programs that protect discharge authorization and satisfy municipal stormwater requirements &mdash; from industrial sites to development permits.</p>
+          <ul class="svc-dels">
+            <li>Effluent characterization &amp; discharge permit support</li>
+            <li>Stormwater pollution prevention plan (SWPPP)</li>
+            <li>Monitoring program design &amp; reporting</li>
+          </ul>
+          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02.3 Energy -->
+    <div class="svc-card" onclick="toggleCard(this)">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80" alt="Energy Efficiency and Retrofit"/>
+      <div class="svc-card-inner">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="svc-num">02.3</div>
+        <h3 class="svc-title">Energy Efficiency &amp; Retrofit</h3>
+        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
+        <div class="svc-expand">
+          <p class="svc-body">Capital sequencing ranked by carbon reduction per dollar invested &mdash; not vendor recommendations. We identify utility incentives and build implementation roadmaps that survive board review.</p>
+          <ul class="svc-dels">
+            <li>Energy audit across facilities &amp; assets</li>
+            <li>Retrofit ROI prioritization &amp; capital planning</li>
+            <li>Utility incentive identification (BC Hydro, FortisBC)</li>
+          </ul>
+          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02.4 Carbon GHG -->
+    <div class="svc-card" onclick="toggleCard(this)">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Carbon and GHG Auditing"/>
+      <div class="svc-card-inner">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+        <div class="svc-num">02.4</div>
+        <h3 class="svc-title">Carbon &amp; GHG Auditing</h3>
+        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
+        <div class="svc-expand">
+          <p class="svc-body">Full Scope 1, 2, and 3 greenhouse gas inventories using GHG Protocol methodology, with regulatory filing support from ECCC requirements to municipal BEPS compliance timelines.</p>
+          <ul class="svc-dels">
+            <li>Utility &amp; fuel data extraction &amp; factor application</li>
+            <li>Intensity ratio benchmarking &amp; trend analysis</li>
+            <li>BPS / BEPS compliance filing support</li>
+          </ul>
+          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02.5 ESG Reporting -->
+    <div class="svc-card" onclick="toggleCard(this)">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="ESG Reporting and Disclosure"/>
+      <div class="svc-card-inner">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <div class="svc-num">02.5</div>
+        <h3 class="svc-title">ESG Reporting &amp; Disclosure</h3>
+        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
+        <div class="svc-expand">
+          <p class="svc-body">GRI-aligned and GRESB-ready sustainability disclosures built for investor and lender audiences &mdash; from materiality assessment through stakeholder package design and annual report integration.</p>
+          <ul class="svc-dels">
+            <li>GRI Standards reporting &amp; materiality assessment</li>
+            <li>GRESB submission preparation &amp; support</li>
+            <li>Stakeholder-ready ESG disclosure package</li>
+          </ul>
+          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02.6 Net Zero -->
+    <div class="svc-card" onclick="toggleCard(this)">
+      <img class="svc-img" src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80" alt="Net Zero and Climate Strategy"/>
+      <div class="svc-card-inner">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+        <div class="svc-num">02.6</div>
+        <h3 class="svc-title">Net Zero &amp; Climate Strategy</h3>
+        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
+        <div class="svc-expand">
+          <p class="svc-body">Science-based target setting and transition roadmap design &mdash; from SBTi target scoping through abatement pathway analysis to board-ready strategy decks that hold up to investor due diligence.</p>
+          <ul class="svc-dels">
+            <li>SBTi target scoping &amp; abatement pathway analysis</li>
+            <li>Carbon offset strategy &amp; registry management</li>
+            <li>Board-level climate transition deck</li>
+          </ul>
+          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div></div></section><div class="cta-strip">
   <svg class="cta-grid-bg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <defs>
     <pattern id="fine" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -285,4 +371,15 @@ function toggleNav(){
 }
 function toggleSub(el){el.nextElementSibling.classList.toggle('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&drawer.classList.contains('open'))toggleNav();});
-</script></body></html>
+</script>
+<script>
+function toggleCard(card){
+  var el = (card && card.classList && card.classList.contains('svc-card')) ? card : (card.closest ? card.closest('.svc-card') : card);
+  if(!el) return;
+  var wasOpen = el.classList.contains('open');
+  var siblings = el.parentElement.querySelectorAll('.svc-card');
+  siblings.forEach(function(c){ c.classList.remove('open'); });
+  if(!wasOpen) el.classList.add('open');
+}
+</script>
+</body></html>
