@@ -16,7 +16,7 @@ a{text-decoration:none;color:inherit;}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff;border-bottom:1px solid #E4E4E7;}
 .nav-bar{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;}
 .nav-logo{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#0A0A0A;}
-.hamburger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:4px;color:#0A0A0A;}
+.hamburger{background:none;border:none;display:flex;flex-direction:column;gap:5px;padding:4px;color:#0A0A0A;}
 .hamburger span{display:block;width:24px;height:1.5px;background:currentColor;transition:transform .25s,opacity .25s;}
 .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
@@ -78,22 +78,22 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
 .svc-card:hover::before{opacity:1;}
 .svc-img{width:100%;height:190px;object-fit:cover;display:block;transition:transform .5s ease;filter:grayscale(20%);}
 .svc-card:hover .svc-img{transform:scale(1.04);}
-.svc-card-inner{padding:28px 28px 28px;display:flex;flex-direction:column;flex:1;}
+.svc-expand{display:block;}.svc-card-inner{padding:28px 28px 28px;display:flex;flex-direction:column;flex:1;}
 .svc-icon{width:40px;height:40px;background:#FFFBEB;display:flex;align-items:center;justify-content:center;margin-bottom:16px;flex-shrink:0;}
 .svc-icon svg{width:20px;height:20px;stroke:#D97706;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;}
 .svc-num{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A1A1AA;margin-bottom:8px;}
 .svc-title{font-size:16px;font-weight:800;letter-spacing:-.025em;color:#0A0A0A;line-height:1.25;margin-bottom:0;}
-.svc-expand{max-height:0;overflow:hidden;transition:max-height .35s ease;}
-.svc-card.open .svc-expand{max-height:600px;}
+
+
 .svc-body{font-size:13px;color:#52525B;line-height:1.8;margin-bottom:18px;margin-top:14px;}
 .svc-dels{list-style:none;padding:0;border-top:1px solid #E4E4E7;padding-top:14px;margin-bottom:18px;}
 .svc-dels li{font-size:12px;color:#71717A;line-height:1.6;padding:3px 0 3px 16px;position:relative;}
 .svc-dels li::before{content:'—';position:absolute;left:0;color:#D97706;font-size:10px;top:5px;}
-.svc-more{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#D97706;display:inline-flex;align-items:center;gap:5px;transition:gap .15s;}
-.svc-card:hover .svc-more{gap:9px;}
-.svc-toggle{background:none;border:none;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#D97706;display:inline-flex;align-items:center;gap:6px;padding:0;margin-top:14px;font-family:inherit;}
-.svc-arrow{transition:transform .2s ease;display:inline-block;font-style:normal;line-height:1;}
-.svc-card.open .svc-arrow{transform:rotate(45deg);}
+
+.svc-card:hover 
+
+
+.svc-card.open 
 .svc-card-disabled{opacity:.6;pointer-events:none;}
 .svc-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;background:#FEF3C7;color:#92400E;margin-top:10px;}
 .warn-banner{background:#FEF3C7;border-left:3px solid #D97706;padding:16px 24px;font-size:13px;color:#92400E;font-weight:600;}
@@ -169,13 +169,12 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
   <div class="svc-grid">
 
     <!-- 03.1 DSS -->
-    <div class="svc-card" onclick="toggleCard(this)">
+    <div class="svc-card">
       <img class="svc-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Designated Substance Surveys"/>
       <div class="svc-card-inner">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4"/><path d="M9 12h6M9 16h4"/></svg></div>
         <div class="svc-num">03.1</div>
         <h3 class="svc-title">Designated Substance Surveys</h3>
-        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
         <div class="svc-expand">
           <p class="svc-body">Before any renovation, demolition, or trade deployment, provincial regulations require a Designated Substance Survey that identifies asbestos, lead, silica, and other hazardous materials in the building. Without one, your contractor is working blind &mdash; and your organization carries the liability when a stop-work order lands or a worker files a compensation claim.</p>
           <ul class="svc-dels">
@@ -183,19 +182,17 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
             <li>Lead, silica &amp; designated substance assessment</li>
             <li>DSS report with substance registry for WorkSafeBC compliance</li>
           </ul>
-          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
         </div>
       </div>
     </div>
 
     <!-- 03.2 Contamination -->
-    <div class="svc-card" onclick="toggleCard(this)">
+    <div class="svc-card">
       <img class="svc-img" src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80" alt="Contamination and Abatement Management"/>
       <div class="svc-card-inner">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <div class="svc-num">03.2</div>
         <h3 class="svc-title">Contamination &amp; Abatement Management</h3>
-        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
         <div class="svc-expand">
           <p class="svc-body">Hazardous material abatement is one of the highest-liability phases of any renovation or demolition project &mdash; under-scoped contracts lead to cost overruns, failed clearance tests, and regulatory penalties that fall on the owner. We manage the full abatement lifecycle from contractor selection through air monitoring during works to signed clearance documentation that closes the owner&rsquo;s liability file.</p>
           <ul class="svc-dels">
@@ -203,19 +200,17 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
             <li>Third-party air monitoring throughout active abatement works</li>
             <li>Post-abatement clearance testing &amp; sign-off documentation</li>
           </ul>
-          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
         </div>
       </div>
     </div>
 
     <!-- 03.3 IAQ -->
-    <div class="svc-card" onclick="toggleCard(this)">
+    <div class="svc-card">
       <img class="svc-img" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80" alt="Indoor Air Quality and Clearance"/>
       <div class="svc-card-inner">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg></div>
         <div class="svc-num">03.3</div>
         <h3 class="svc-title">Indoor Air Quality &amp; Clearance Testing</h3>
-        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
         <div class="svc-expand">
           <p class="svc-body">Poor indoor air quality drives occupant health complaints, absenteeism, and &mdash; when ignored &mdash; WorkSafeBC investigations that expose building owners and operators to enforcement. We conduct IAQ baseline testing, investigate occupant complaints, and issue post-remediation clearance reports backed by accredited laboratory analysis and defensible methodology.</p>
           <ul class="svc-dels">
@@ -223,19 +218,17 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
             <li>HVAC performance &amp; ventilation adequacy assessment</li>
             <li>Post-abatement clearance testing &amp; occupant exposure report</li>
           </ul>
-          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
         </div>
       </div>
     </div>
 
     <!-- 03.4 Mould -->
-    <div class="svc-card" onclick="toggleCard(this)">
+    <div class="svc-card">
       <img class="svc-img" src="https://images.unsplash.com/photo-1584922491159-dc3498c3a0be?w=800&q=80" alt="Mould Assessment and Remediation"/>
       <div class="svc-card-inner">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
         <div class="svc-num">03.4</div>
         <h3 class="svc-title">Mould Assessment &amp; Remediation</h3>
-        <button class="svc-toggle" onclick="event.stopPropagation();toggleCard(this.closest('.svc-card'))">Learn More <i class="svc-arrow">+</i></button>
         <div class="svc-expand">
           <p class="svc-body">Visible mould growth in a commercial building is a legal liability, an insurance event, and an occupant health crisis &mdash; often simultaneously. We conduct systematic mould investigations with air and surface sampling, develop remediation scopes that address moisture sources (not just surface growth), oversee contractor work, and issue clearance certificates that protect the owner post-project.</p>
           <ul class="svc-dels">
@@ -243,7 +236,6 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
             <li>Remediation scope addressing root moisture pathway</li>
             <li>Contractor oversight &amp; post-remediation clearance certificate</li>
           </ul>
-          <a href="mailto:intake@wayfinder-sme.com" class="svc-more">Get in Touch <span>&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -256,7 +248,7 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
         <div class="svc-num">03.5</div>
         <h3 class="svc-title">Building Envelope Assessment</h3>
         <span class="svc-badge">Available 2027</span>
-        <div class="svc-expand" style="max-height:none;">
+        <div class="svc-expand">
           <p class="svc-body">Building envelope failures &mdash; moisture intrusion, thermal bridging, and cladding defects &mdash; are among the costliest defect categories an asset owner can inherit. We conduct performance reviews and moisture management assessments that identify failure modes and sequence capital remediation before water damage escalates to structural liability.</p>
           <ul class="svc-dels">
             <li>Moisture intrusion investigation &amp; leak source mapping</li>
@@ -275,7 +267,7 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
         <div class="svc-num">03.6</div>
         <h3 class="svc-title">Site Environmental Field Services</h3>
         <span class="svc-badge">Available 2027</span>
-        <div class="svc-expand" style="max-height:none;">
+        <div class="svc-expand">
           <p class="svc-body">Phase I/II Environmental Site Assessments provide the environmental liability picture that every acquisition, disposition, and lender due diligence process requires. We support site transactions with desktop ESA reviews, screening-level field work, and regulatory liaison that quantifies environmental risk exposure before it becomes a deal condition or a post-closing dispute.</p>
           <ul class="svc-dels">
             <li>Phase I ESA desktop review &amp; site reconnaissance</li>
@@ -286,7 +278,19 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
       </div>
     </div>
 
-  </div></div></section><div class="cta-strip">
+  
+  <div style="text-align:center;padding:48px 24px 8px;">
+    <a href="mailto:intake@wayfinder-sme.com"
+       style="display:inline-flex;align-items:center;gap:10px;background:#D97706;color:#fff;
+              font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;
+              text-transform:uppercase;text-decoration:none;padding:16px 36px;
+              border-radius:0;transition:opacity .2s ease;"
+       onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+      Get in Touch &nbsp;&rarr;
+    </a>
+  </div>
+
+</div></div></section><div class="cta-strip">
   <svg class="cta-grid-bg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <defs>
     <pattern id="fine" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -374,13 +378,7 @@ function toggleNav(){
 function toggleSub(el){el.nextElementSibling.classList.toggle('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&drawer.classList.contains('open'))toggleNav();});
 </script>
-<script>
-function toggleCard(card){
-  var el = (card && card.classList && card.classList.contains('svc-card')) ? card : (card.closest ? card.closest('.svc-card') : card);
-  if(!el || el.classList.contains('svc-card-disabled')) return;
-  var wasOpen = el.classList.contains('open');
-  var siblings = el.parentElement.querySelectorAll('.svc-card');
-  siblings.forEach(function(c){ c.classList.remove('open'); });
+<script>);
   if(!wasOpen) el.classList.add('open');
 }
 </script>
