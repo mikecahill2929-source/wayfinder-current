@@ -43,11 +43,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff;border-botto
 /* DARK HERO */
 .page-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#060C17 0%,#0B1829 55%,#060C17 100%);padding:140px 0 80px;}
 .hero-grid{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
-.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.10;mix-blend-mode:luminosity;}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.22;mix-blend-mode:luminosity;}
 .ph-inner{position:relative;z-index:2;}
 .ph-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:18px;}
 .ph-h{font-size:clamp(44px,7vw,96px);font-weight:800;letter-spacing:-.04em;line-height:1.0;color:#fff;}
-.ph-sub{font-size:17px;color:rgba(255,255,255,.45);line-height:1.75;max-width:600px;margin-top:20px;}
+.ph-sub{font-size:17px;color:rgba(255,255,255,.55);line-height:1.75;max-width:620px;margin-top:20px;}
 
 /* INTRO SECTION */
 .about-intro{padding:72px 0;border-bottom:1px solid #E4E4E7;}
@@ -65,6 +65,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff;border-botto
 .proto-tile{border-right:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;overflow:hidden;}
 .proto-img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .5s ease;filter:grayscale(15%);}
 .proto-tile:hover .proto-img{transform:scale(1.03);}
+.proto-svg-panel{width:100%;height:220px;display:block;background:#F8F8FA;overflow:hidden;}
 .proto-body{padding:28px 28px 36px;}
 .proto-num{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0A0A0A;margin-bottom:10px;opacity:.35;}
 .proto-title{font-size:20px;font-weight:800;letter-spacing:-.025em;color:#0A0A0A;margin-bottom:10px;}
@@ -164,7 +165,7 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
   </div>
 </div>
 
-<!-- DARK HERO -->
+<!-- DARK HERO — vibrant beach/ocean background -->
 <section class="page-hero">
   <svg class="hero-grid" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
@@ -184,21 +185,21 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
     <text x="90" y="52" font-size="9" fill="rgba(255,255,255,.18)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="2">49°17'N 123°07'W</text>
     <line x1="0" y1="40%" x2="100%" y2="40%" stroke="rgba(99,179,237,.06)" stroke-width="1"/>
   </svg>
-  <img class="hero-bg-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80" alt=""/>
+  <img class="hero-bg-img" src="https://images.unsplash.com/photo-1476673160081-cf065607f449?w=1600&q=80" alt=""/>
   <div class="wrap ph-inner">
     <p class="ph-label">About Wayfinder</p>
     <h1 class="ph-h">Who Are The Wayfinders?</h1>
-    <p class="ph-sub">The name is not a metaphor. It is a provenance. The wayfinders were the Pacific navigators who crossed thousands of kilometres of open ocean using stars, swells, and accumulated knowledge — without instruments, without charts, without margin for error.</p>
+    <p class="ph-sub">Wayfinders of old used their knowledge of stars, swells, and currents to navigate thousands of kilometres of open ocean — without instruments, without charts, without margin for error. Wayfinder ESG uses modern tools and subject-matter expertise in OHS and environmental consulting to help organizations navigate a world of evolving regulations and rising compliance costs — and find their competitive edge.</p>
   </div>
 </section>
 
 <!-- ABOUT INTRO -->
 <section class="about-intro">
   <div class="wrap">
-    <p class="about-pull">In Wade Davis's landmark work <em>The Wayfinders</em>, he describes how the master navigators of the Pacific committed entire oceanic knowledge systems to memory — the star paths, the swell patterns, the flight of birds — and used that knowledge to find landfall across four thousand kilometres of open sea. No instruments. No charts. No second chances.</p>
+    <p class="about-pull">The same principles that guided ancient navigators guide us: systematic observation, pattern recognition, and the discipline to act on what you find before conditions change.</p>
     <div class="about-body">
-      <p>That is the standard we hold ourselves to. Modern organizations face environments just as complex and just as unforgiving: regulatory frameworks that shift without notice, liability exposures that compound in silence, and compliance costs that arrive as surprises rather than budgeted line items. The question is not whether a hazard exists. It is whether you found it before it found you.</p>
-      <p>Wayfinder EHS Consulting is an occupational health, safety, and environmental consulting firm built on the belief that ancient knowledge — structured observation, pattern recognition, disciplined navigation — is the most powerful tool for managing modern risk. We embed alongside client teams, map their complete exposure terrain, and deliver sequenced, costed outcomes with independently verifiable results.</p>
+      <p>Modern organizations face environments that are complex and unforgiving in exactly the same way: regulatory frameworks that shift without notice, liability exposures that compound in silence, and compliance costs that arrive as surprises rather than budgeted line items. The question is not whether a hazard exists. It is whether you found it before it found you.</p>
+      <p>Wayfinder is an occupational health, safety, and environmental consulting firm built on the belief that rigorous, structured expertise — applied with the same discipline that navigators brought to open-ocean crossings — is the most powerful tool for managing modern risk. We embed alongside client teams, map their complete exposure terrain, and deliver sequenced, costed outcomes with independently verifiable results.</p>
       <p>Our practice spans three domains — OHS, Environmental &amp; ESG, and Building Sciences — delivered under a single engagement model. No handoffs. No gaps between disciplines. One firm that knows where you are and can show you how to get where you need to be.</p>
     </div>
   </div>
@@ -211,43 +212,122 @@ footer{padding:56px 0;border-top:1px solid #E4E4E7;}
     <h2 class="sec-h">The Wayfinder Protocol.</h2>
     <div class="proto-grid">
 
+      <!-- 01 MAP THE EXPOSURE — inline risk-category diagram -->
       <div class="proto-tile">
-        <img class="proto-img" src="https://images.unsplash.com/photo-1527168027773-0cc890c4f42e?w=900&q=80" alt="Map the Exposure"/>
+        <svg class="proto-svg-panel" viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <rect width="700" height="220" fill="#F0F4F8"/>
+          <!-- connector line -->
+          <line x1="52" y1="110" x2="648" y2="110" stroke="#CBD5E0" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <!-- hex helper: flat-top hexagon centred at cx,cy with radius r -->
+          <!-- hex 1 -->
+          <polygon points="52,88 70,77 88,88 88,110 70,121 52,110" fill="#2563EB" opacity=".9"/>
+          <text x="70" y="106" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Inter,sans-serif">01</text>
+          <text x="70" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#2563EB" font-family="Inter,sans-serif" letter-spacing=".5">PHYSICAL</text>
+          <!-- hex 2 -->
+          <polygon points="150,74 168,63 186,74 186,96 168,107 150,96" fill="#EA580C" opacity=".9"/>
+          <text x="168" y="92" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Inter,sans-serif">02</text>
+          <text x="168" y="118" text-anchor="middle" font-size="9" font-weight="700" fill="#EA580C" font-family="Inter,sans-serif" letter-spacing=".5">CHEMICAL</text>
+          <!-- hex 3 -->
+          <polygon points="248,88 266,77 284,88 284,110 266,121 248,110" fill="#6D28D9" opacity=".9"/>
+          <text x="266" y="106" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Inter,sans-serif">03</text>
+          <text x="266" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#6D28D9" font-family="Inter,sans-serif" letter-spacing=".5">BIOLOGICAL</text>
+          <!-- hex 4 -->
+          <polygon points="346,74 364,63 382,74 382,96 364,107 346,96" fill="#65A30D" opacity=".9"/>
+          <text x="364" y="92" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Inter,sans-serif">04</text>
+          <text x="364" y="118" text-anchor="middle" font-size="9" font-weight="700" fill="#65A30D" font-family="Inter,sans-serif" letter-spacing=".5">ERGONOMIC</text>
+          <!-- hex 5 -->
+          <polygon points="444,88 462,77 480,88 480,110 462,121 444,110" fill="#2563EB" opacity=".75"/>
+          <text x="462" y="106" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Inter,sans-serif">05</text>
+          <text x="462" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#1D4ED8" font-family="Inter,sans-serif" letter-spacing=".5">ENVIRONMENTAL</text>
+          <!-- hex 6 -->
+          <polygon points="542,74 560,63 578,74 578,96 560,107 542,96" fill="#166534" opacity=".9"/>
+          <text x="560" y="92" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Inter,sans-serif">06</text>
+          <text x="560" y="118" text-anchor="middle" font-size="9" font-weight="700" fill="#166534" font-family="Inter,sans-serif" letter-spacing=".5">PSYCHOSOCIAL</text>
+          <!-- hex 7 -->
+          <polygon points="622,88 640,77 658,88 658,110 640,121 622,110" fill="#B45309" opacity=".9"/>
+          <text x="640" y="106" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Inter,sans-serif">07</text>
+          <text x="640" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#B45309" font-family="Inter,sans-serif" letter-spacing=".5">REGULATORY</text>
+          <!-- label -->
+          <text x="350" y="185" text-anchor="middle" font-size="11" font-weight="700" fill="#94A3B8" font-family="Inter,sans-serif" letter-spacing="1">TYPES OF EXPOSURE — FULL-SPECTRUM DISCOVERY</text>
+        </svg>
         <div class="proto-body">
           <div class="proto-num">01</div>
           <div class="proto-title">Map The Exposure</div>
-          <div class="proto-desc">We map your complete regulatory and physical risk terrain before any remediation begins. No assumptions — full-scope discovery covering OHS, environmental, and building science vectors simultaneously.</div>
+          <div class="proto-desc">We map your complete regulatory and physical risk terrain before any remediation begins. No assumptions — full-scope discovery covering OHS, environmental, and building science vectors simultaneously, across all seven exposure categories.</div>
           <span class="proto-tag">Discovery &amp; Audit</span>
         </div>
       </div>
 
+      <!-- 02 SEQUENCE THE FIX — priority sequence diagram -->
       <div class="proto-tile">
-        <img class="proto-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80" alt="Sequence the Fix"/>
+        <svg class="proto-svg-panel" viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <rect width="700" height="220" fill="#0F172A"/>
+          <!-- arrow baseline -->
+          <defs>
+            <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+              <polygon points="0 0, 8 3, 0 6" fill="#94A3B8"/>
+            </marker>
+          </defs>
+          <line x1="40" y1="175" x2="665" y2="175" stroke="#94A3B8" stroke-width="1" marker-end="url(#arr)"/>
+          <text x="350" y="210" text-anchor="middle" font-size="9" fill="#64748B" font-family="Inter,sans-serif" letter-spacing="1" font-weight="600">SEQUENCE BY CONSEQUENCE EXPOSURE — HIGH TO LOW</text>
+
+          <!-- Block 1 — Liability/Critical -->
+          <rect x="40" y="60" width="140" height="108" fill="#991B1B" opacity=".95"/>
+          <text x="110" y="82" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.6)" font-family="Inter,sans-serif" font-weight="700" letter-spacing="1">LIABILITY / RISK</text>
+          <text x="110" y="104" text-anchor="middle" font-size="22" fill="#fff" font-family="Inter,sans-serif" font-weight="800">$$$$$</text>
+          <text x="110" y="122" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)" font-family="Inter,sans-serif" font-weight="800" letter-spacing=".5">PRIORITY 1</text>
+          <text x="110" y="137" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.55)" font-family="Inter,sans-serif">Critical System Failure</text>
+          <text x="110" y="150" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.55)" font-family="Inter,sans-serif">High Exposure</text>
+
+          <!-- Block 2 — High Risk -->
+          <rect x="200" y="78" width="140" height="90" fill="#C2410C" opacity=".95"/>
+          <text x="270" y="98" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.6)" font-family="Inter,sans-serif" font-weight="700" letter-spacing="1">HIGH RISK</text>
+          <text x="270" y="118" text-anchor="middle" font-size="20" fill="#fff" font-family="Inter,sans-serif" font-weight="800">$$$</text>
+          <text x="270" y="134" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)" font-family="Inter,sans-serif" font-weight="800" letter-spacing=".5">PRIORITY 2</text>
+          <text x="270" y="150" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.55)" font-family="Inter,sans-serif">Severe Regulatory</text>
+
+          <!-- Block 3 — Medium Risk -->
+          <rect x="360" y="94" width="140" height="74" fill="#D97706" opacity=".95"/>
+          <text x="430" y="113" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.6)" font-family="Inter,sans-serif" font-weight="700" letter-spacing="1">MEDIUM RISK</text>
+          <text x="430" y="131" text-anchor="middle" font-size="18" fill="#fff" font-family="Inter,sans-serif" font-weight="800">$$</text>
+          <text x="430" y="147" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)" font-family="Inter,sans-serif" font-weight="800" letter-spacing=".5">PRIORITY 3</text>
+
+          <!-- Block 4 — Low Risk -->
+          <rect x="520" y="108" width="130" height="60" fill="#15803D" opacity=".9"/>
+          <text x="585" y="126" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.6)" font-family="Inter,sans-serif" font-weight="700" letter-spacing="1">LOW RISK</text>
+          <text x="585" y="143" text-anchor="middle" font-size="16" fill="#fff" font-family="Inter,sans-serif" font-weight="800">$</text>
+          <text x="585" y="157" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.7)" font-family="Inter,sans-serif" font-weight="700">PRIORITY 4</text>
+
+          <!-- label top -->
+          <text x="40" y="48" font-size="10" fill="#94A3B8" font-family="Inter,sans-serif" font-weight="600" letter-spacing=".5">HIGHEST LIABILITY ADDRESSED FIRST — NOT ALPHABETICAL ORDER</text>
+        </svg>
         <div class="proto-body">
           <div class="proto-num">02</div>
           <div class="proto-title">Sequence The Fix</div>
-          <div class="proto-desc">Findings are costed and prioritized by risk magnitude — not alphabetical order. Capital is sequenced by consequence exposure so your highest-liability items are addressed first.</div>
+          <div class="proto-desc">Findings are costed and prioritized by risk magnitude — not alphabetical order. Capital is sequenced by consequence exposure so your highest-liability items are addressed first, before they compound into enforcement events or insurance claims.</div>
           <span class="proto-tag">Risk Ranking &amp; Costing</span>
         </div>
       </div>
 
+      <!-- 03 EXECUTE AND MANAGE — frontline manager photo -->
       <div class="proto-tile">
-        <img class="proto-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80" alt="Execute and Manage"/>
+        <img class="proto-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&q=80" alt="Manager on site with workers"/>
         <div class="proto-body">
           <div class="proto-num">03</div>
           <div class="proto-title">Execute And Manage</div>
-          <div class="proto-desc">We manage the remediation process — not just the report. Contractor oversight, regulatory liaison, and field presence continue until closure is confirmed and documented.</div>
-          <span class="proto-tag">Implementation</span>
+          <div class="proto-desc">We manage the remediation process — not just the report. Our principals provide field presence alongside your frontline teams: contractor oversight, regulatory liaison, and on-site direction continue until closure is confirmed and documented.</div>
+          <span class="proto-tag">Implementation &amp; Field Presence</span>
         </div>
       </div>
 
+      <!-- 04 CONFIRM SAFE ARRIVAL — debrief / whiteboard photo -->
       <div class="proto-tile">
-        <img class="proto-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80" alt="Confirm Safe Arrival"/>
+        <img class="proto-img" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=900&q=80" alt="Team debrief at whiteboard"/>
         <div class="proto-body">
           <div class="proto-num">04</div>
           <div class="proto-title">Confirm Safe Arrival</div>
-          <div class="proto-desc">Independent verification of outcomes with deliverables you can show a regulator, insurer, or board. Every engagement closes with a documented, audit-ready record of remediation.</div>
-          <span class="proto-tag">Verification &amp; Reporting</span>
+          <div class="proto-desc">Every engagement closes with a structured debrief: independent verification of outcomes, lessons documented, and the loop formally closed. Deliverables you can show a regulator, insurer, or board — plus a continuous improvement record that strengthens your next cycle.</div>
+          <span class="proto-tag">Verify, Close &amp; Improve</span>
         </div>
       </div>
 
